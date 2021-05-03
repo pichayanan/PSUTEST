@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Type-User</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom Fonts -->
+    <link
+      href="vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="vendor/simple-line-icons/css/simple-line-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.min.css" rel="stylesheet" />
+  </head>
+
+  <body style="background-color: rgb(100, 136, 214)">
+    <!-- Navigation -->
+    <nav style="background-color: white; color: #000">
+      <ul class="nav justify-content-start">
+        <h5 style="margin-top: 1%; margin-left: 1%">
+          ระบบสวัสดิการเงินกู้มหาวิทยาลัยสงขลานครินทร์
+        </h5>
+      </ul>
+    </nav>
+    <div class="mt-5" style="color: midnightblue; text-align: center">
+      <h3>เงินยืมเพื่อตัดชุดครุยบุคลากร</h3>
+    </div>
+    <!------card------>
+    <div class="row mt-5 ml-2 mr-2">
+      <div class="col-sm-2"></div>
+
+      <div class="col-sm-8">
+        <div class="card">
+          <h style="margin-left: 2%; margin-top: 2%">
+            :: รายได้สุทธิ ::
+          </h>
+          
+            <!-------form------->
+            <form
+              action="./UserConfirm.html"
+              class="needs-validation"
+              
+            >
+            <div class="card" style="background-color: darkgrey; margin: 2%">
+              <div class="row mt-sm-3 ml-sm-2 ">
+                <div class="form-inline col-sm-6">
+                  <label for="salary" class="mr-sm-2">เงินเดือน / ค่าจ้าง :</label>
+                  <input
+                    type="text"
+                    class="form-control mb-2 mr-sm-2"
+                    id="salary"
+                    placeholder=""
+                    name="salary"
+                    required
+                  />
+                  <label for="salary" class="ml-sm-2">บาท ต่อเดือน</label>
+                  <div class="valid-feedback">Valid.</div>
+                  <div class="invalid-feedback">
+                    Please fill out this field.
+                  </div>
+                </div>
+                <div class="form-inline col-sm-6">
+                    <label for="total" class="mr-sm-2">เงินสุทธิ :</label>
+                  <input
+                    type="text"
+                    class="form-control mb-2 mr-sm-2"
+                    id="total"
+                    placeholder=""
+                    name="total"
+                    required
+                  />
+                  <label for="total" class="ml-sm-2">บาท</label>
+                  <div class="valid-feedback">Valid.</div>
+                  <div class="invalid-feedback">
+                    Please fill out this field.
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-sm-5">
+                <div class="form-inline col-sm-6">
+                </div>
+                <div class="form-group col-sm-6">
+                    <h style="color: crimson;">( *ผู้กู้ต้องมีเงินเดือนคงเหลือสุทธิหลังจากหักหนี้สินทุกประเภทแล้ว ไม่น้อยกว่าร้อยละ 10 )</h>
+                </div>
+              </div>
+            </div>
+            <h style="margin-left: 2%; margin-top: 2%">
+                :: จำนวนเงินที่ประสงค์ขอกู้ ::
+              </h>
+              <div class="card" style="background-color: darkgrey; margin: 2%">
+                <div class="row mt-sm-3 ml-sm-2 mb-sm-3">
+                  <div class="form-inline col-sm-8">
+                    <label for="salary" class="mr-sm-2">จำนวนเงินที่ประสงค์ขอกู้ :</label>
+                    <input
+                      type="text"
+                      class="form-control mb-2 mr-sm-2"
+                      id="salary"
+                      placeholder=""
+                      name="salary"
+                      required
+                    />
+                    <label for="salary" class="ml-sm-2 ">บาท</label>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">
+                      Please fill out this field.
+                    </div>
+                  </div>
+                  <div class="form-inline col-sm-2">
+                  </div>
+                </div>
+                
+              </div>
+              <div style="margin-bottom: 2%; margin-left: 87%; margin-top: 3%">
+                <button type="submit" class="btn btn-primary">บันทึกข้อมูล</button>
+              </div>
+            </form>
+            <!-----check----->
+            <!-- <label for="status" style="margin-right: 2%">สถานะ :</label>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="customRadio"
+                  name="status"
+                  value="customEx"
+                />
+                <label class="custom-control-label" for="customRadio"
+                  >โสด</label
+                >
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="customRadio2"
+                  name="status"
+                  value="customEx"
+                />
+                <label class="custom-control-label" for="customRadio2"
+                  >สมรส</label
+                >
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="customRadio3"
+                  name="status"
+                  value="customEx"
+                />
+                <label class="custom-control-label" for="customRadio3"
+                  >หม้าย</label
+                >
+              </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="customRadio4"
+                  name="status"
+                  value="customEx"
+                />
+                <label class="custom-control-label" for="customRadio4"
+                  >อื่นๆ</label
+                >
+              </div>
+            </form>
+           -->
+          
+
+          <div>
+            <nav style="margin-left: 40%" aria-label="...">
+              <ul class="pagination">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                </li>
+                <li class="page-item disabled">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                <li class="page-item disabled">
+                  <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item disabled">
+                  <a class="page-link" href="#">3</a>
+                </li>
+                <li class="page-item disabled">
+                    <a class="page-link" href="#">4</a>
+                  </li>
+                  <li class="page-item active">
+                    <a class="page-link"
+                      >5 <span class="sr-only">(current)</span></a
+                    >
+                  </li>
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-2"></div>
+    </div>
+
+    <footer class="footer text-center">
+      <div class="container"></div>
+    </footer>
+
+    <!-- Scroll to Top Button-->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+
+    <script src="js/stylish-portfolio.min.js"></script>
+
+    <style>
+      /* Make the image fully responsive */
+      .carousel-inner img {
+        width: 100%;
+        height: 500px;
+      }
+    </style>
+  </body>
+</html>
