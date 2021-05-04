@@ -135,7 +135,7 @@ function UserConfirm() {
     location.href="./index.html";
     
   }else{
-    alert("กรุณาตรวจสออบเงื่อนไขให้ถูกต้องถูกต้อง");
+    alert("กรุณาตรวจสอบเงื่อนไขให้ถูกต้อง");
   }
 }
 
@@ -144,4 +144,17 @@ function UserCancel() {
     location.href="./index.html";
     
  
+}
+
+function Adminlogin() {
+  let username = document.getElementById("username").value;
+  let pwd = document.getElementById("pwd").value;
+  
+  if(username == "Admin" && pwd == "Admin123"){
+    location.href="./AdminHome.html";
+  }
+  else{
+    alert("กรุณาตรวจสอบเงื่อนไขให้ถูกต้อง");
+    
+  }
 }
