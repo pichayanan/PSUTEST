@@ -195,3 +195,4 @@ function Adminlogin() {
     location.href = "./UserConfirm.html";
   }
 }
+}
