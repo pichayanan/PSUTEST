@@ -3,7 +3,7 @@
 // $.get(Finalla, function (datafinal) {
 //   console.log(datafinal);
 // });
-function test() {
+function UserPage1() {
   let fname = document.getElementById("Fname").value;
   let lname = document.getElementById("Lname").value;
   let position = document.getElementById("position").value;
@@ -40,7 +40,7 @@ function checkName() {
 
 }
 
-function test2() {
+function UserPage2() {
   let fname = document.getElementById("Fname").value;
   let lname = document.getElementById("Lname").value;
   let phone = document.getElementById("phone").value;
@@ -59,7 +59,7 @@ function test2() {
 }
 
 
-function test3() {
+function UserPage3() {
   let fname = document.getElementById("Fname").value;
   let lname = document.getElementById("Lname").value;
   let position = document.getElementById("position").value;
@@ -83,11 +83,61 @@ function test3() {
   ) {
     alert("กรุณาระบุข้อมูลให้ครบถ้วนและถูกต้อง");
    }
-   // else {
-  //   if (status == "สมรส") {
-  //    location.href="./User-4.html";
-  //   } else {
-  //     location.href="./User-5.html";
-  //   }
-  // }
+   else {
+    if (status == "สมรส") {
+     location.href="./User-4.html";
+    } else {
+      location.href="./User-5.html";
+    }
+  }
+}
+
+function UserPage4() {
+  let fname = document.getElementById("Fname").value;
+  let lname = document.getElementById("Lname").value;
+  let phone = document.getElementById("phone").value;
+  let Tphone = document.getElementById("Tphone").value;
+  let salary = document.getElementById("salary").value;
+
+  if (
+    fname == "" ||
+    lname == "" ||
+    phone == "" ||
+    Tphone == ""||
+    salary == ""
+  ) {
+    alert("กรุณาระบุข้อมูลให้ครบถ้วนและถูกต้อง");
+  }
+}
+
+function UserPage5() {
+ 
+  let total = document.getElementById("total").value;
+  let Psalary = document.getElementById("Psalary").value;
+  let salary = document.getElementById("salary").value;
+
+  if (
+    total == "" ||
+    Psalary == ""||
+    salary == ""
+  ) {
+    alert("กรุณาระบุข้อมูลให้ครบถ้วนและถูกต้อง");
+  }else{
+    location.href="./UserConfirm.html";
+  }
+}
+
+function UserConfirm() {
+  let check = document.getElementById("myChecked").checked;
+
+
+  if (
+    total == "" ||
+    Psalary == ""||
+    salary == ""
+  ) {
+    alert("กรุณาระบุข้อมูลให้ครบถ้วนและถูกต้อง");
+  }else{
+    location.href="./UserConfirm.html";
+  }
 }
