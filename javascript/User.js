@@ -1,8 +1,6 @@
-// var Finalla = "https://localhost:5001/weatherforecast";
-// console.log(Finalla);
-// $.get(Finalla, function (datafinal) {
-//   console.log(datafinal);
-// });
+// API
+var API = "http://localhost:27615";
+
 function test() {
   let fname = document.getElementById("Fname").value;
   let lname = document.getElementById("Lname").value;
@@ -13,6 +11,12 @@ function test() {
   let phone = document.getElementById("phone").value;
   let Tphone = document.getElementById("Tphone").value;
   let status = document.querySelector('input[name="status"]:checked').value;
+
+  let getUsertables = `${API}/api/usertables`;
+  $.get(getUsertables, function (Usertables) {
+    console.log(Usertables);
+  });
+
   if (
     fname == "" ||
     lname == "" ||
@@ -26,10 +30,9 @@ function test() {
     alert("ใส่ข้อมูลให้ถูกหิดที");
   } else {
     if (status == "โสด" || status == "หม้าย") {
-        location.href = '../User-3.html';
+      location.href = "../User-3.html";
     } else {
-        location.href = '../User-2.html';
-
+      location.href = "../User-2.html";
     }
   }
 }
