@@ -128,16 +128,20 @@ function UserPage5() {
 }
 
 function UserConfirm() {
-  let check = document.getElementById("myChecked").checked;
-
-
+  let check = document.getElementById("myChecked").value;
   if (
-    total == "" ||
-    Psalary == ""||
-    salary == ""
+    check == true
   ) {
-    alert("กรุณาระบุข้อมูลให้ครบถ้วนและถูกต้อง");
+    location.href="./index.html";
+    
   }else{
-    location.href="./UserConfirm.html";
+    alert("กรุณาตรวจสออบเงื่อนไขให้ถูกต้องถูกต้อง");
   }
+}
+
+function UserCancel() {
+  
+    location.href="./index.html";
+    
+ 
 }
