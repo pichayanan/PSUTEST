@@ -1,82 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
-<head>
+    <title>Type-User</title>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
-  <title>Type-User</title>
+    <!-- Custom Fonts -->
+    <link
+      href="vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="vendor/simple-line-icons/css/simple-line-icons.css"
+      rel="stylesheet"
+    />
 
-  <!-- Bootstrap Core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.min.css" rel="stylesheet" />
+  </head>
 
-  <!-- Custom Fonts -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
-
-  <!-- Custom CSS -->
-  <link href="css/stylish-portfolio.min.css" rel="stylesheet">
-
-</head>
-
-<body id="page-top">
-
-  <!-- Navigation -->
-  <a class="menu-toggle rounded" href="#">
-    <i class="fas fa-bars"></i>
-  </a>
-  <nav id="sidebar-wrapper">
-    <ul class="sidebar-nav">
-        <li class="sidebar-brand">
-        </li>
+  <body id="page-top">
+    <!-- Navigation -->
+    <a class="menu-toggle rounded" href="#">
+      <i class="fas fa-bars"></i>
+    </a>
+    <nav id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li class="sidebar-brand"></li>
         <li class="sidebar-nav-item">
           <a class="js-scroll-trigger" href="/index.html">หน้าแรก</a>
         </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="/TypeUser.html">ประเภทการกู้</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="/TotalUser.html">สรุปยอดชำระ</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="js-scroll-trigger" href="/LoginAdmin.html">ADMIN PAGE</a>
-      </li>
-    </ul>
-  </nav>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="/TypeUser.html">ประเภทการกู้</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="/TotalUser.html">สรุปยอดชำระ</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="/LoginAdmin.html">ADMIN PAGE</a>
+        </li>
+      </ul>
+    </nav>
 
- 
-  
- <div class="container text-center my-auto">
-      <h3 class="mb-1">
-        <em>ประเภทการกู้ 12 ประเภท</em>
-      </h3>
-      
-    </div>
-    <div class="ccard"></div>
-  
-    
+    <header class="masthead d-flex mx-auto">
+      <div
+        class="card text-black justify-center"
+        style="
+          height: 600px;
+          width: 900px;
+          background: rgba(255, 255, 255, 0.699);
+          margin-left: 25%;
+        "
+      >
+        <div class="container my-auto">
+          <div
+            class="card"
+            style="height: 500px; width: 700px; margin-left: 8%; margin-top: 2%"
+          >
+            <h3
+              class="mb-sm-2"
+              style="text-align: center; margin-top: 5%; margin-bottom: 5%"
+            >
+              สำหรับดูรายการที่ชำระ
+            </h3>
+            <div class="row mt-sm-2 ml-sm-3 mr-sm-2 mb-as-2">
+              <div class="col-sm-5 ml-sm-3">
+                <div class="form-group" style="margin-top: 5%">
+                  <label for="Fname">ชื่อ :</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter Username"
+                    id="Fname"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div class="col-sm-5">
+                <div class="form-group" style="margin-top: 5%">
+                  <label for="Lname">นามสกุล :</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter Username"
+                    id="Lname"
+                    value=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="form-inline ml-sm-5" style="margin-top: 5%">
+              <label for="idcard">เลขบัตรประชาชน :</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="เลขบัตร 13 หลัก"
+                id="idcard"
+                value=""
+                style="margin-left: 2%;"
+              />
+            </div>
+            <div class="form-inline ml-sm-5" style="margin-top: 5%">
+              <label for="TypeP">ประเภทการกู้ :</label>
+              <select name="TypeP" id="TypeP" class="custom-select ml-sm-2">
+                <option value="0" selected>------</option>
+                <option value="1">1.เงินกู้เพื่อรักษาพยาบาลตนเองและญาติสายตรง</option>
+                <option value="2">2.เงินกู้เพื่อการศึกษาของตนเอง</option>
+                <option value="3">
+                  3.เงินกู้ค่าเล่าเรียนบุตรในส่วนที่เกินสิทธิ
+                </option>
+                <option value="4">4.เงินกู้เพื่อซื้อวัสดุอุปกรณ์การศึกษาของบุตร</option>
+                <option value="5">5.เงินกู้เพื่อซื้อคอมพิวเตอร์ และอุปกรณ์ IT</option>
+                <option value="6">6.เงินกู้เพื่อส่งเสริมสุขภาวะบุคลากร/เครื่องมือออกกำลังกายเพื่อสุขภาพ</option>
+                <option value="7">7.เงินกู้เพื่อประกอบกิจกรรมด้านวัฒนธรรมบุคลากรและญาติสายตรง</option>
+                <option value="8">
+                 8.เงินกู้เพื่อซื้อประกันชีวิตของบุคลากร คู่สมรสและบุตร
+                </option>
+                <option value="9">9.เงินกู้เพื่อซื้อหรือซ่อมแซมยานพาหนะ</option>
+                <option value="10">10.เงินกู้เพื่อซ่อมแซมที่อยู่อาศัย</option>
+                <option value="11">11.เงินยืมเพื่อตัดชุดขาวพร้อมเครื่องหมาย</option>
+                <option value="12">
+                  12.เงินยืมเพื่อตัดชุดครุยบุคลากร
+                </option>
+              </select>
+            </div>
+            <div style="margin-bottom: 10%; text-align: center;margin-top: 7%;">
+              <button
+                type="submit"
+                class="btn btn-primary"
+                style="width: fit-content"
+                onclick="Userlogin()"
+              >
+                ดูรายการ
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
 
+    <footer class="footer text-center">
+      <div class="container">
+        <ul class="list-inline mb-5">
+          <li class="list-inline-item">
+            <a class="social-link rounded-circle text-white mr-3" href="#!">
+              <i class="icon-social-facebook"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="social-link rounded-circle text-white mr-3" href="#!">
+              <i class="icon-social-twitter"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="social-link rounded-circle text-white" href="#!">
+              <i class="icon-social-github"></i>
+            </a>
+          </li>
+        </ul>
+        <p class="text-muted small mb-0">Copyright &copy; Your Website 2020</p>
+      </div>
+    </footer>
 
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
 
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="js/stylish-portfolio.min.js"></script>
 
-  <!-- Custom scripts for this template -->
-  <script src="js/stylish-portfolio.min.js"></script>
- 
-</body>
-
+    <!--------user-------->
+    <script src="./javascript/User.js"></script>
+  </body>
 </html>

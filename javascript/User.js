@@ -243,11 +243,41 @@ function UserPage5() {
 }
 
 function UserConfirm() {
-  let check = document.getElementById("myChecked").checked;
-
-  if (total == "" || Psalary == "" || salary == "") {
-    alert("กรุณาระบุข้อมูลให้ครบถ้วนและถูกต้อง");
+  let check = document.getElementById("myChecked").value;
+  if (check == true) {
+    location.href = "./index.html";
   } else {
-    location.href = "./UserConfirm.html";
+    alert("กรุณาตรวจสอบเงื่อนไขให้ถูกต้อง");
   }
 }
+
+function UserCancel() {
+  location.href = "./index.html";
+}
+
+function Adminlogin() {
+  let username = document.getElementById("username").value;
+  let pwd = document.getElementById("pwd").value;
+
+  if (username == "Admin" && pwd == "Admin123") {
+    location.href = "./AdminHome.html";
+  } else {
+    alert("กรุณาตรวจสอบเงื่อนไขให้ถูกต้อง");
+  }
+}
+
+function Userlogin() {
+  let Fname = document.getElementById("Fname").value;
+  let Lname = document.getElementById("Lname").value;
+  let idcard = document.getElementById("idcard").value;
+  let TypeP = $("#TypeP option:selected").val();
+
+  if (Fname == "" || Lname == "" || idcard == "" || TypeP == "0") {
+    alert("กรุณาระบุข้อมูลให้ถูกต้อง");
+  } else {
+    location.href = "./tableUser.html";
+  }
+}
+
+
+
