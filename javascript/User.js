@@ -1,5 +1,5 @@
 // API
-var API = "https://localhost:5001";
+var API = "http://localhost:5000";
 
 function test() {
   let fname = document.getElementById("Fname").value;
@@ -100,7 +100,6 @@ function addDataByUser1(ele) {
   } else {
     document.getElementById("customRadio3").checked = true;
   }
-
 }
 
 function UserPage2() {
