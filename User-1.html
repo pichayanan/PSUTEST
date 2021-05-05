@@ -1,106 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+    <title>Type-User</title>
 
-  <title>Type-User</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
-  <!-- Bootstrap Core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Custom Fonts -->
+    <link
+      href="vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="vendor/simple-line-icons/css/simple-line-icons.css"
+      rel="stylesheet"
+    />
 
-  <!-- Custom Fonts -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
-    rel="stylesheet" type="text/css" />
-  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.min.css" rel="stylesheet" />
+  </head>
 
-  <!-- Custom CSS -->
-  <link href="css/stylish-portfolio.min.css" rel="stylesheet" />
-</head>
+  <body style="background-color: rgb(100, 136, 214)">
+    <!-- Navigation -->
+    <nav style="background-color: white; color: #000">
+      <ul class="nav justify-content-start">
+        <h5 style="margin-top: 1%; margin-left: 1%">
+          ระบบสวัสดิการเงินกู้มหาวิทยาลัยสงขลานครินทร์
+        </h5>
+      </ul>
+    </nav>
+    <div class="mt-5" style="color: midnightblue; text-align: center">
+      <h3>เงินยืมเพื่อตัดชุดครุยบุคลากร</h3>
+    </div>
+    <!------card------>
+    <div class="row mt-5 ml-2 mr-2">
+      <div class="col-sm-2"></div>
 
-<body style="background-color: rgb(100, 136, 214)">
-  <!-- Navigation -->
-  <nav style="background-color: white; color: #000">
-    <ul class="nav justify-content-start">
-      <h5 style="margin-top: 1%; margin-left: 1%">
-        ระบบสวัสดิการเงินกู้มหาวิทยาลัยสงขลานครินทร์
-      </h5>
-    </ul>
-  </nav>
-  <div class="mt-5" style="color: midnightblue; text-align: center">
-    <h3>เงินยืมเพื่อตัดชุดครุยบุคลากร</h3>
-  </div>
-  <!------card------>
-  <div class="row mt-5 ml-2 mr-2">
-    <div class="col-sm-2"></div>
-
-    <div class="col-sm-8">
-      <div class="card">
-        <h style="margin-left: 2%; margin-top: 2%"> :: ข้อมูลส่วนบุคคล :: </h>
-        <div class="card" style="background-color: darkgrey; margin: 2%">
-          <!-------form------->
-          <div class="needs-validation" style="margin: 2%">
-            <div class="row">
-              <div class="form-group col-sm-6">
-                <label for="Fname" class="mr-sm-2">ชื่อ :</label>
-                <input type="text" class="form-control mb-2 mr-sm-2" id="Fname" placeholder="*ฟ้าใส" name="Fname"
-                  required />
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">
-                  Please fill out this field.
+      <div class="col-sm-8">
+        <div class="card">
+          <h style="margin-left: 2%; margin-top: 2%"> :: ข้อมูลส่วนบุคคล :: </h>
+          <div class="card" style="background-color: darkgrey; margin: 2%">
+            <!-------form------->
+            <div class="needs-validation" style="margin: 2%">
+              <div class="row">
+                <div class="form-group col-sm-6">
+                  <label for="Fname" class="mr-sm-2">ชื่อ :</label>
+                  <input
+                    type="text"
+                    class="form-control mb-2 mr-sm-2"
+                    id="Fname"
+                    placeholder="*ฟ้าใส"
+                    name="Fname"
+                    required
+                  />
+                  <div class="valid-feedback">Valid.</div>
+                  <div class="invalid-feedback">
+                    Please fill out this field.
+                  </div>
+                </div>
+                <div class="form-group col-sm-6">
+                  <label for="Lname">นามสกุล:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="Lname"
+                    placeholder="*คนดี"
+                    name="Lname"
+                    required
+                  />
+                  <div class="valid-feedback">Valid.</div>
+                  <div class="invalid-feedback">
+                    Please fill out this field.
+                  </div>
+                  <div style="margin-top: 2%; text-align: end">
+                    <button
+                      type="submit"
+                      class="btn btn-primary"
+                      style="width: fit-content"
+                      onclick="checkName()"
+                    >
+                      ตรวจสอบ
+                    </button>
+                  </div>
                 </div>
               </div>
-              <div class="form-group col-sm-6">
-                <label for="Lname">นามสกุล:</label>
-                <input type="text" class="form-control" id="Lname" placeholder="*คนดี" name="Lname" required />
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">
-                  Please fill out this field.
-                </div>
-                <div style="margin-top: 2%; text-align: end">
-                  <button type="submit" class="btn btn-primary" style="width: fit-content" onclick="checkName()">
-                    ตรวจสอบ
-                  </button>
-                </div>
-              </div>
-            </div>
 
-            <div class="row">
-              <div class="form-group col-sm-6">
-                <label for="position" class="mr-sm-2">ตำแหน่ง :</label>
-                <input type="text" class="form-control mb-2 mr-sm-2" id="position" placeholder="*นักวิชาการ"
-                  name="position" required />
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">
-                  Please fill out this field.
+              <div class="row">
+                <div class="form-group col-sm-6">
+                  <label for="position" class="mr-sm-2">ตำแหน่ง :</label>
+                  <input
+                    type="text"
+                    class="form-control mb-2 mr-sm-2"
+                    id="position"
+                    placeholder="*นักวิชาการ"
+                    name="position"
+                    required
+                  />
+                  <div class="valid-feedback">Valid.</div>
+                  <div class="invalid-feedback">
+                    Please fill out this field.
+                  </div>
+                </div>
+                <div class="form-group col-sm-6">
+                  <label for="TypeP">ประเภทบุคลากร:</label>
+                  <select name="TypeP" id="TypeP" class="custom-select">
+                    <option value="0" selected>------</option>
+                    <option value="ข้าราชการ">ข้าราชการ</option>
+                    <option value="ลูกจ้างประจำ">ลูกจ้างประจำ</option>
+                    <option value="พนักงานมหาวิทยาลัย">
+                      พนักงานมหาวิทยาลัย
+                    </option>
+                    <option value="พนักงานเงินรายได้">พนักงานเงินรายได้</option>
+                  </select>
                 </div>
               </div>
-              <div class="form-group col-sm-6">
-                <label for="TypeP">ประเภทบุคลากร:</label>
-                <select name="TypeP" id="TypeP" class="custom-select">
-                  <option value="0" selected>------</option>
-                  <option value="ข้าราชการ">ข้าราชการ</option>
-                  <option value="ลูกจ้างประจำ">ลูกจ้างประจำ</option>
-                  <option value="พนักงานมหาวิทยาลัย">
-                    พนักงานมหาวิทยาลัย
-                  </option>
-                  <option value="พนักงานเงินรายได้">พนักงานเงินรายได้</option>
-                </select>
-              </div>
-            </div>
 
-            <div class="row">
-              <div class="form-group col-sm-6">
-                <label for="positionJ" class="mr-sm-2">สังกัดส่วนงาน :</label>
-                <input type="text" class="form-control mb-2 mr-sm-2" id="positionJ" placeholder="" name="positionJ"
-                  required />
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">
-                  Please fill out this field.
+              <div class="row">
+                <div class="form-group col-sm-6">
+                  <label for="positionJ" class="mr-sm-2">สังกัดส่วนงาน :</label>
+                  <input
+                    type="text"
+                    class="form-control mb-2 mr-sm-2"
+                    id="positionJ"
+                    placeholder=""
+                    name="positionJ"
+                    required
+                  />
+                  <div class="valid-feedback">Valid.</div>
+                  <div class="invalid-feedback">
+                    Please fill out this field.
+                  </div>
+                </div>
+                <div class="form-group col-sm-6">
+                  <label for="idSalary">รหัสเงินเดือน :</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="idSalary"
+                    placeholder=""
+                    name="idSalary"
+                    required
+                  />
+                  <div class="valid-feedback">Valid.</div>
+                  <div class="invalid-feedback">
+                    Please fill out this field.
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="form-group col-sm-6">
+                  <label for="phone" class="mr-sm-2">โทรศัพท์ :</label>
+                  <input
+                    type="text"
+                    class="form-control mb-2 mr-sm-2"
+                    id="phone"
+                    placeholder="*026485XXX"
+                    name="phone"
+                    required
+                  />
+                  <div class="valid-feedback">Valid.</div>
+                  <div class="invalid-feedback">
+                    Please fill out this field.
+                  </div>
                 </div>
                 <div class="form-group col-sm-6">
                   <label for="Tphone">มือถือ:</label>
@@ -120,6 +196,7 @@
               </div>
               <!-----check----->
               <label for="status" style="margin-right: 2%">สถานะ :</label>
+
               <div class="custom-control custom-radio custom-control-inline">
                 <input
                   type="radio"
@@ -129,9 +206,9 @@
                   value="โสด"
                   checked
                 />
-                <label class="custom-control-label" for="customRadio">
-                  โสด
-                </label>
+                <label class="custom-control-label" for="customRadio"
+                  >โสด</label
+                >
               </div>
               <div class="custom-control custom-radio custom-control-inline">
                 <input
@@ -141,9 +218,9 @@
                   name="status"
                   value="สมรส"
                 />
-                <label class="custom-control-label" for="customRadio2">
-                  สมรส
-                </label>
+                <label class="custom-control-label" for="customRadio2"
+                  >สมรส</label
+                >
               </div>
               <div class="custom-control custom-radio custom-control-inline">
                 <input
@@ -153,123 +230,84 @@
                   name="status"
                   value="หม้าย"
                 />
-                <label class="custom-control-label" for="customRadio3">
-                  หม้าย
-                </label>
+                <label class="custom-control-label" for="customRadio3"
+                  >หม้าย</label
+                >
               </div>
-              <div class="form-group col-sm-6">
-                <label for="idSalary">รหัสเงินเดือน :</label>
-                <input type="text" class="form-control" id="idSalary" placeholder="" name="idSalary" required />
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">
-                  Please fill out this field.
-                </div>
-              </div>
-            </div>
 
-            <div class="row">
-              <div class="form-group col-sm-6">
-                <label for="phone" class="mr-sm-2">โทรศัพท์ :</label>
-                <input type="text" class="form-control mb-2 mr-sm-2" id="phone" placeholder="*026485XXX" name="phone"
-                  required />
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">
-                  Please fill out this field.
-                </div>
-              </div>
-              <div class="form-group col-sm-6">
-                <label for="Tphone">มือถือ:</label>
-                <input type="text" class="form-control mb-2 mr-sm-2" id="Tphone" placeholder="*088531XXXX" name="Tphone"
-                  required />
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">
-                  Please fill out this field.
-                </div>
+              <div style="margin-bottom: 2%; margin-top: 3%; text-align: end">
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  style="width: fit-content"
+                  onclick="test()"
+                >
+                  ถัดไป
+                </button>
               </div>
             </div>
-            <!-----check----->
-            <label for="status" style="margin-right: 2%">สถานะ :</label>
-
-            <div class="custom-control custom-radio custom-control-inline">
-              <input type="radio" class="custom-control-input" id="customRadio" name="status" value="โสด" checked />
-              <label class="custom-control-label" for="customRadio">โสด</label>
-            </div>
-            <div class="custom-control custom-radio custom-control-inline">
-              <input type="radio" class="custom-control-input" id="customRadio2" name="status" value="สมรส" />
-              <label class="custom-control-label" for="customRadio2">สมรส</label>
-            </div>
-            <div class="custom-control custom-radio custom-control-inline">
-              <input type="radio" class="custom-control-input" id="customRadio3" name="status" value="หม้าย" />
-              <label class="custom-control-label" for="customRadio3">หม้าย</label>
-            </div>
-
-            <div style="margin-bottom: 2%; margin-top: 3%; text-align: end">
-              <button type="submit" class="btn btn-primary" style="width: fit-content" onclick="test()">
-                ถัดไป
-              </button>
-            </div>
+            <!-- end From -->
           </div>
-          <!-- end From -->
-        </div>
-        <div class="row mt-sm-2">
-          <div class="col-sm-4"></div>
-          <div class="col-sm-4" style="margin-left: 5%">
-            <nav aria-label="...">
-              <ul class="pagination">
-                <li class="page-item active">
-                  <a class="page-link">1 <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="page-item disabled">
-                  <a class="page-link" href="#">2</a>
-                </li>
+          <div class="row mt-sm-2">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4" style="margin-left: 5%">
+              <nav aria-label="...">
+                <ul class="pagination">
+                  <li class="page-item active">
+                    <a class="page-link"
+                      >1 <span class="sr-only">(current)</span></a
+                    >
+                  </li>
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#">2</a>
+                  </li>
 
-                <li class="page-item disabled">
-                  <a class="page-link" href="#">3</a>
-                </li>
-                <li class="page-item disabled">
-                  <a class="page-link" href="#">4</a>
-                </li>
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#">3</a>
+                  </li>
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#">4</a>
+                  </li>
 
-                <li class="page-item disabled">
-                  <a class="page-link" href="#">5</a>
-                </li>
-              </ul>
-            </nav>
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#">5</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="col-sm-5"></div>
           </div>
-          <div class="col-sm-5"></div>
         </div>
       </div>
+
+      <div class="col-sm-4"></div>
     </div>
 
-    <div class="col-sm-4"></div>
-  </div>
+    <footer class="footer text-center">
+      <div class="container"></div>
+    </footer>
 
-  <footer class="footer text-center">
-    <div class="container"></div>
-  </footer>
+    <!-- Scroll to Top Button-->
 
-  <!-- Scroll to Top Button-->
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="js/stylish-portfolio.min.js"></script>
 
-  <!-- Custom scripts for this template -->
-  <script src="js/stylish-portfolio.min.js"></script>
+    <!-- foder -->
+    <script src="./javascript/User.js"></script>
 
-  <!-- foder -->
-  <script src="./javascript/User.js"></script>
-
-  <style>
-    /* Make the image fully responsive */
-    .carousel-inner img {
-      width: 100%;
-      height: 500px;
-    }
-  </style>
-</body>
-
+    <style>
+      /* Make the image fully responsive */
+      .carousel-inner img {
+        width: 100%;
+        height: 500px;
+      }
+    </style>
+  </body>
 </html>
