@@ -1,5 +1,5 @@
 // API
-var API = "http://localhost:27615";
+var API = "https://localhost:5001";
 
 function test() {
   let fname = document.getElementById("Fname").value;
@@ -90,6 +90,17 @@ function addDataByUser1(ele) {
   document.getElementById("idSalary").value = ele.uSalaryid;
   document.getElementById("phone").value = ele.uPhone;
   document.getElementById("Tphone").value = ele.uTel;
+
+  var single = document.getElementById("customRadio").value;
+  var marraige = document.getElementById("customRadio2").value;
+  if (ele.uStatus == single) {
+    document.getElementById("customRadio").checked = true;
+  } else if (ele.uStatus == marraige) {
+    document.getElementById("customRadio2").checked = true;
+  } else {
+    document.getElementById("customRadio3").checked = true;
+  }
+
 }
 
 function UserPage2() {
