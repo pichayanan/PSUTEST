@@ -12,6 +12,23 @@ function test() {
   let Tphone = document.getElementById("Tphone").value;
   let status = document.querySelector('input[name="status"]:checked').value;
 
+  let dataSet = {
+    u1_fname: fname,
+    u1_lname: lname,
+    u1_position: position,
+    u1_TypeP: TypeP,
+    u1_positionJ: positionJ,
+    u1_idSalary: idSalary,
+    u1_phone: phone,
+    u1_Tphone: Tphone,
+    u1_status: status,
+  };
+
+  const user1 = sessionStorage.getItem("user1");
+  if (user1 != null) {
+    sessionStorage.removeItem("user1");
+  }
+
   if (
     fname == "" ||
     lname == "" ||
@@ -28,6 +45,7 @@ function test() {
       location.href = "../User-3.html";
     } else {
       location.href = "../User-2.html";
+      sessionStorage.setItem("user1", JSON.stringify(dataSet));
     }
   }
 }
@@ -46,9 +64,7 @@ function checkName() {
         const element = Usertables[index];
         const uFname = element.uFname;
         const uLname = element.uLname;
-        const uPosition = element.uPosition;
-        // const uLname = element.uLname;
-        // console.log(element);
+
         if (uFname == fname && uLname == lname) {
           addDataByUser1(element);
           check_name = true;
@@ -113,6 +129,7 @@ function addDataByUser1(ele) {
   } else {
     document.getElementById("customRadio3").checked = true;
   }
+<<<<<<< HEAD
 
   var mr = document.getElementById("title1").value;
   var ms = document.getElementById("title2").value;
@@ -160,6 +177,8 @@ function addDataByUser3(ele){
   } else {
     document.getElementById("title3").checked = true;
   }
+=======
+>>>>>>> Nnew
 }
 
 function UserPage2() {
