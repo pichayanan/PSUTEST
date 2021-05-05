@@ -1,5 +1,5 @@
 // API
-var API = "https://localhost:5001";
+var API = "http://localhost:5000";
 
 function test() {
   let fname = document.getElementById("Fname").value;
@@ -61,6 +61,35 @@ function checkName() {
   }
 }
 
+function checkName3() {
+  let fname = document.getElementById("Fname").value;
+  let lname = document.getElementById("Lname").value;
+  let check_name = false;
+
+  if (fname == "" || lname == "") {
+    console.log("ใส่ข้อมูลก่อนตะ");
+  } else {
+    let getUsertables = `${API}/api/usertables`;
+    $.get(getUsertables, function (Usertables) {
+      for (let index = 0; index < Usertables.length; index++) {
+        const element = Usertables[index];
+        const uFname = element.uFname;
+        const uLname = element.uLname;
+        const uPosition = element.uPosition;
+        // const uLname = element.uLname;
+        // console.log(element);
+        if (uFname == fname && uLname == lname) {
+          addDataByUser3(element);
+          check_name = true;
+        }
+      }
+      if (check_name == false) {
+        console.log("ไม่มีข้อมูลที่ตรงกัน");
+      }
+    });
+  }
+}
+
 function addDataByUser1(ele) {
   console.log(ele);
   let select = document.all;
@@ -85,6 +114,52 @@ function addDataByUser1(ele) {
     document.getElementById("customRadio3").checked = true;
   }
 
+  var mr = document.getElementById("title1").value;
+  var ms = document.getElementById("title2").value;
+  if (ele.uTitle == mr) {
+    document.getElementById("title1").checked = true;
+  } else if (ele.uTitle == ms) {
+    document.getElementById("title2").checked = true;
+  } else {
+    document.getElementById("title3").checked = true;
+  }
+
+}
+
+function addDataByUser3(ele){
+  console.log(ele);
+  let select = document.all;
+
+  document.getElementById("position").value = ele.uPosition;
+  if (select.TypeP.value == "0") {
+    select.TypeP.value = ele.uType;
+  }
+
+  document.getElementById("positionJ").value = ele.uAffiliation;
+  document.getElementById("salary").value = ele.uSalary;
+  document.getElementById("idPo").value = ele.uDivision;
+  document.getElementById("phone").value = ele.uPhone;
+  document.getElementById("Tphone").value = ele.uTel;
+
+  var single = document.getElementById("customRadio").value;
+  var marraige = document.getElementById("customRadio2").value;
+  if (ele.uStatus == single) {
+    document.getElementById("customRadio").checked = true;
+  } else if (ele.uStatus == marraige) {
+    document.getElementById("customRadio2").checked = true;
+  } else {
+    document.getElementById("customRadio3").checked = true;
+  }
+
+  var mr = document.getElementById("title1").value;
+  var ms = document.getElementById("title2").value;
+  if (ele.uTitle == mr) {
+    document.getElementById("title1").checked = true;
+  } else if (ele.uTitle == ms) {
+    document.getElementById("title2").checked = true;
+  } else {
+    document.getElementById("title3").checked = true;
+  }
 }
 
 function UserPage2() {
