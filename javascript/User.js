@@ -1,7 +1,7 @@
 // API
 var API = "http://localhost:5000";
 
-function test() {
+function UserPage1() {
   let fname = document.getElementById("Fname").value;
   let lname = document.getElementById("Lname").value;
   let position = document.getElementById("position").value;
@@ -129,7 +129,6 @@ function addDataByUser1(ele) {
   } else {
     document.getElementById("customRadio3").checked = true;
   }
-<<<<<<< HEAD
 
   var mr = document.getElementById("title1").value;
   var ms = document.getElementById("title2").value;
@@ -140,10 +139,9 @@ function addDataByUser1(ele) {
   } else {
     document.getElementById("title3").checked = true;
   }
-
 }
 
-function addDataByUser3(ele){
+function addDataByUser3(ele) {
   console.log(ele);
   let select = document.all;
 
@@ -177,8 +175,6 @@ function addDataByUser3(ele){
   } else {
     document.getElementById("title3").checked = true;
   }
-=======
->>>>>>> Nnew
 }
 
 function UserPage2() {
@@ -297,6 +293,3 @@ function Userlogin() {
     location.href = "./tableUser.html";
   }
 }
-
-
-

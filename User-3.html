@@ -1,63 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+    <title>Type-User</title>
 
-  <title>Type-User</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
-  <!-- Bootstrap Core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Custom Fonts -->
+    <link
+      href="vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="vendor/simple-line-icons/css/simple-line-icons.css"
+      rel="stylesheet"
+    />
 
-  <!-- Custom Fonts -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
-    rel="stylesheet" type="text/css" />
-  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.min.css" rel="stylesheet" />
+  </head>
 
-  <!-- Custom CSS -->
-  <link href="css/stylish-portfolio.min.css" rel="stylesheet" />
-</head>
-
-<body style="background-color: rgb(100, 136, 214)">
-  <!-- Navigation -->
-  <nav style="background-color: white; color: #000">
-    <ul class="nav justify-content-start">
-      <h5 style="margin-top: 1%; margin-left: 1%">
-        ระบบสวัสดิการเงินกู้มหาวิทยาลัยสงขลานครินทร์
-      </h5>
-    </ul>
-  </nav>
-  <div class="mt-5" style="color: midnightblue; text-align: center">
-    <h3>เงินยืมเพื่อตัดชุดครุยบุคลากร</h3>
-  </div>
-  <!------card------>
-  <div class="row mt-5 ml-2 mr-2">
-    <div class="col-sm-2"></div>
-
-    <div class="col-sm-8">
-      <div class="card">
-        <h style="margin-left: 2%; margin-top: 2%"> :: ข้อมูลผู้ค้ำ :: </h>
-        <div class="card" style="background-color: darkgrey; margin: 2%">
-          <!-------form------->
-          <div class="needs-validation" style="margin: 2%">
-            <label for="title" style="margin-right: 2%">คำนำหน้า :</label>
-            <div class="custom-control custom-radio custom-control-inline">
-              <input type="radio" class="custom-control-input" id="title1" name="title" value="นาย" checked />
-              <label class="custom-control-label" for="title1">นาย</label>
-            </div>
-            <div class="custom-control custom-radio custom-control-inline">
-              <input type="radio" class="custom-control-input" id="title2" name="title" value="นางสาว" />
-              <label class="custom-control-label" for="title2">นางสาว</label>
-            </div>
-            <div class="custom-control custom-radio custom-control-inline">
-              <input type="radio" class="custom-control-input" id="title3" name="title" value="นาง" />
-              <label class="custom-control-label" for="title3">นาง</label>
-            </div>
-
+  <body style="background-color: rgb(100, 136, 214)">
+    <!-- Navigation -->
+    <nav style="background-color: white; color: #000">
+      <ul class="nav justify-content-start">
+        <h5 style="margin-top: 1%; margin-left: 1%">
+          ระบบสวัสดิการเงินกู้มหาวิทยาลัยสงขลานครินทร์
+        </h5>
+      </ul>
+    </nav>
+    <div class="mt-5" style="color: midnightblue; text-align: center">
+      <h3>เงินยืมเพื่อตัดชุดครุยบุคลากร</h3>
+    </div>
+    <!------card------>
+    <div class="row mt-5 ml-2 mr-2">
+      <div class="col-sm-2"></div>
 
       <div class="col-sm-8">
         <div class="card">
@@ -113,37 +104,62 @@
                     Please fill out this field.
                   </div>
                 </div>
-                <div style="margin-top: 2%; text-align: end">
-                  <button type="submit" class="btn btn-primary" style="width: fit-content" onclick="checkName3()">
-                    ตรวจสอบ
-                  </button>
+                <div class="form-group col-sm-6">
+                  <label for="Lname">นามสกุล:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="Lname"
+                    placeholder="*คนดี"
+                    name="Lname"
+                    required
+                  />
+                  <div class="valid-feedback">Valid.</div>
+                  <div class="invalid-feedback">
+                    Please fill out this field.
+                  </div>
+                  <div style="margin-top: 2%; text-align: end">
+                    <button
+                      type="submit"
+                      class="btn btn-primary"
+                      style="width: fit-content"
+                      onclick="checkName3()"
+                    >
+                      ตรวจสอบ
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="row">
-              <div class="form-group col-sm-6">
-                <label for="position" class="mr-sm-2">ตำแหน่ง :</label>
-                <input type="text" class="form-control mb-2 mr-sm-2" id="position" placeholder="*นักวิชาการ"
-                  name="position" required />
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">
-                  Please fill out this field.
+              <div class="row">
+                <div class="form-group col-sm-6">
+                  <label for="position" class="mr-sm-2">ตำแหน่ง :</label>
+                  <input
+                    type="text"
+                    class="form-control mb-2 mr-sm-2"
+                    id="position"
+                    placeholder="*นักวิชาการ"
+                    name="position"
+                    required
+                  />
+                  <div class="valid-feedback">Valid.</div>
+                  <div class="invalid-feedback">
+                    Please fill out this field.
+                  </div>
+                </div>
+                <div class="form-group col-sm-6">
+                  <label for="TypeP">ประเภทบุคลากร:</label>
+                  <select name="TypeP" id="TypeP" class="custom-select">
+                    <option value="0" selected>------</option>
+                    <option value="ข้าราชการ">ข้าราชการ</option>
+                    <option value="ลูกจ้างประจำ">ลูกจ้างประจำ</option>
+                    <option value="พนักงานมหาวิทยาลัย">
+                      พนักงานมหาวิทยาลัย
+                    </option>
+                    <option value="พนักงานเงินรายได้">พนักงานเงินรายได้</option>
+                  </select>
                 </div>
               </div>
-              <div class="form-group col-sm-6">
-                <label for="TypeP">ประเภทบุคลากร:</label>
-                <select name="TypeP" id="TypeP" class="custom-select">
-                  <option value="0" selected>------</option>
-                  <option value="ข้าราชการ">ข้าราชการ</option>
-                  <option value="ลูกจ้างประจำ">ลูกจ้างประจำ</option>
-                  <option value="พนักงานมหาวิทยาลัย">
-                    พนักงานมหาวิทยาลัย
-                  </option>
-                  <option value="พนักงานเงินรายได้">พนักงานเงินรายได้</option>
-                </select>
-              </div>
-            </div>
 
               <div class="row">
                 <div class="form-group col-sm-6">
@@ -163,39 +179,55 @@
                     Please fill out this field.
                   </div>
                 </div>
-              </div>
-              <div class="form-group col-sm-6">
-                <label for="idPo">ส่วนงาน :</label>
-                <input type="text" class="form-control" id="idPo" placeholder="" name="idPo" required />
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">
-                  Please fill out this field.
+                <div class="form-group col-sm-6">
+                  <label for="idPo">ส่วนงาน :</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="idPo"
+                    placeholder=""
+                    name="idPo"
+                    required
+                  />
+                  <div class="valid-feedback">Valid.</div>
+                  <div class="invalid-feedback">
+                    Please fill out this field.
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="row">
-              <div class="form-group col-sm-6">
-                <label for="phone" class="mr-sm-2">โทรศัพท์ :</label>
-                <input type="text" class="form-control mb-2 mr-sm-2" id="phone" placeholder="*026485XXX" name="phone"
-                  required />
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">
-                  Please fill out this field.
+              <div class="row">
+                <div class="form-group col-sm-6">
+                  <label for="phone" class="mr-sm-2">โทรศัพท์ :</label>
+                  <input
+                    type="text"
+                    class="form-control mb-2 mr-sm-2"
+                    id="phone"
+                    placeholder="*026485XXX"
+                    name="phone"
+                    required
+                  />
+                  <div class="valid-feedback">Valid.</div>
+                  <div class="invalid-feedback">
+                    Please fill out this field.
+                  </div>
+                </div>
+                <div class="form-group col-sm-6">
+                  <label for="Tphone">มือถือ:</label>
+                  <input
+                    type="text"
+                    class="form-control mb-2 mr-sm-2"
+                    id="Tphone"
+                    placeholder="*088531XXXX"
+                    name="Tphone"
+                    required
+                  />
+                  <div class="valid-feedback">Valid.</div>
+                  <div class="invalid-feedback">
+                    Please fill out this field.
+                  </div>
                 </div>
               </div>
-<<<<<<< HEAD
-              <div class="form-group col-sm-6">
-                <label for="Tphone">มือถือ:</label>
-                <input type="text" class="form-control mb-2 mr-sm-2" id="Tphone" placeholder="*088531XXXX" name="Tphone"
-                  required />
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">
-                  Please fill out this field.
-                </div>
-<<<<<<< HEAD
-=======
-=======
               <div class="row mt-sm-2">
                 <div class="form-inline col-sm-6">
                   <label for="salary" class="mr-sm-2">เงินเดือน :</label>
@@ -213,7 +245,6 @@
                     Please fill out this field.
                   </div>
                 </div>
->>>>>>> Nnew
                 <div class="form-group col-sm-6"></div>
               </div>
               <!-----check----->
@@ -244,24 +275,19 @@
                 <label class="custom-control-label" for="customRadio2"
                   >สมรส</label
                 >
->>>>>>> palm
               </div>
-            </div>
-            <div class="row mt-sm-2">
-              <div class="form-inline col-sm-6">
-                <label for="salary" class="mr-sm-2">เงินเดือน :</label>
-                <input type="text" class="form-control mb-2 mr-sm-2" id="salary" placeholder="" name="salary"
-                  required />
-                <label for="salary" class="ml-sm-2">บาท</label>
-                <div class="valid-feedback">Valid.</div>
-                <div class="invalid-feedback">
-                  Please fill out this field.
-                </div>
+              <div class="custom-control custom-radio custom-control-inline">
+                <input
+                  type="radio"
+                  class="custom-control-input"
+                  id="customRadio3"
+                  name="status"
+                  value="หม้าย"
+                />
+                <label class="custom-control-label" for="customRadio3"
+                  >หม้าย</label
+                >
               </div>
-<<<<<<< HEAD
-              <div class="form-group col-sm-6">
-
-=======
               <div style="margin-bottom: 2%; margin-top: 3%; text-align: end">
                 <button
                   type="submit"
@@ -271,51 +297,12 @@
                 >
                   ถัดไป
                 </button>
->>>>>>> palm
               </div>
             </div>
-            <!-----check----->
-            <label for="status" style="margin-right: 2%;margin-top: 2%;">สถานะ :</label>
-            <div class="custom-control custom-radio custom-control-inline">
-              <input type="radio" class="custom-control-input" id="customRadio" name="status" value="โสด" checked />
-              <label class="custom-control-label" for="customRadio">โสด</label>
-            </div>
-            <div class="custom-control custom-radio custom-control-inline">
-              <input type="radio" class="custom-control-input" id="customRadio2" name="status" value="สมรส" />
-              <label class="custom-control-label" for="customRadio2">สมรส</label>
-            </div>
-            <div class="custom-control custom-radio custom-control-inline">
-              <input type="radio" class="custom-control-input" id="customRadio3" name="status" value="หม้าย" />
-              <label class="custom-control-label" for="customRadio3">หม้าย</label>
-            </div>
-            <div style="margin-bottom: 2%; margin-top: 3%; text-align: end">
-              <button type="submit" class="btn btn-primary" style="width: fit-content" onclick="test3()">
-                ถัดไป
-              </button>
-            </div>
           </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-        </div>
-
-        <div class="row mt-sm-2">
-          <div class="col-sm-4"></div>
-          <div class="col-sm-4">
-            <nav style="margin-left: 5%;" aria-label="...">
-              <ul class="pagination">
-                <li class="page-item disabled"><a class="page-link" href="#">1</a></li>
-
-                <li class="page-item disabled"><a class="page-link" href="#">2</a></li>
-                <li class="page-item active">
-                  <a class="page-link">3 <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="page-item disabled"><a class="page-link" href="#">4</a></li>
-
-                <li class="page-item disabled"><a class="page-link" href="#">5</a></li>
-=======
 
           <div class="mx-auto">
-            <nav  aria-label="...">
+            <nav aria-label="...">
               <ul class="pagination">
                 <li class="page-item disabled">
                   <a class="page-link" href="#">1</a>
@@ -325,20 +312,6 @@
                   <a class="page-link" href="#">2</a>
                 </li>
                 <li class="page-item active">
-=======
-
-          <div class="mx-auto">
-            <nav  aria-label="...">
-              <ul class="pagination">
-                <li class="page-item disabled">
-                  <a class="page-link" href="#">1</a>
-                </li>
-
-                <li class="page-item disabled">
-                  <a class="page-link" href="#">2</a>
-                </li>
-                <li class="page-item active">
->>>>>>> Nnew
                   <a class="page-link"
                     >3 <span class="sr-only">(current)</span></a
                   >
@@ -350,10 +323,6 @@
                 <li class="page-item disabled">
                   <a class="page-link" href="#">5</a>
                 </li>
-<<<<<<< HEAD
->>>>>>> palm
-=======
->>>>>>> Nnew
               </ul>
             </nav>
           </div>
@@ -379,15 +348,7 @@
 
     <script src="js/stylish-portfolio.min.js"></script>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <!-- foder -->
-=======
     <!--------user-------->
->>>>>>> palm
-=======
-    <!--------user-------->
->>>>>>> Nnew
     <script src="./javascript/User.js"></script>
 
     <style>
@@ -397,6 +358,5 @@
         height: 500px;
       }
     </style>
-</body>
-
+  </body>
 </html>
