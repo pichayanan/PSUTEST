@@ -1,7 +1,8 @@
 // API
 var API = "http://localhost:5000";
 
-function UserPage1() {
+async function UserPage1() {
+  let title = document.querySelector('input[name="title"]:checked').value;
   let fname = document.getElementById("Fname").value;
   let lname = document.getElementById("Lname").value;
   let position = document.getElementById("position").value;
@@ -12,21 +13,34 @@ function UserPage1() {
   let Tphone = document.getElementById("Tphone").value;
   let status = document.querySelector('input[name="status"]:checked').value;
 
+  console.log("cccc", title);
   let dataSet = {
-    u1_fname: fname,
-    u1_lname: lname,
-    u1_position: position,
-    u1_TypeP: TypeP,
-    u1_positionJ: positionJ,
-    u1_idSalary: idSalary,
-    u1_phone: phone,
-    u1_Tphone: Tphone,
-    u1_status: status,
+    uId: "",
+    uTitle: title,
+    uFname: fname,
+    uLname: lname,
+    uPosition: position,
+    uType: TypeP,
+    uSalaryid: idSalary,
+    uStartdate: "",
+    uSalary: 22090,
+    uLoan: "",
+    uAffiliation: positionJ,
+    uTel: Tphone,
+    uPhone: phone,
+    uStatus: status,
+    uDivision: "ว่าง",
+    marriagetable: "",
   };
 
   const user1 = sessionStorage.getItem("user1");
+  const user2 = sessionStorage.getItem("user2");
   if (user1 != null) {
     sessionStorage.removeItem("user1");
+  }
+
+  if (user2 != null) {
+    sessionStorage.removeItem("user2");
   }
 
   if (
@@ -41,12 +55,26 @@ function UserPage1() {
   ) {
     alert("กรุณาระบุข้อมูลให้ครบถ้วนและถูกต้อง");
   } else {
-    if (status == "โสด" || status == "หม้าย") {
-      location.href = "../User-3.html";
-    } else {
-      location.href = "../User-2.html";
-      sessionStorage.setItem("user1", JSON.stringify(dataSet));
-    }
+    let getUsertables = `${API}/api/usertables`;
+    $.get(getUsertables, async function (Usertables) {
+      for (let index = 0; index < Usertables.length; index++) {
+        const element = Usertables[index];
+        const uFname = element.uFname;
+        const uLname = element.uLname;
+
+        if (uFname == fname && uLname == lname) {
+          console.log(element);
+          dataSet.uId = element.uId;
+        }
+      }
+      if (status == "สมรส") {
+        location.href = "../User-2.html";
+        sessionStorage.setItem("user1", JSON.stringify(dataSet));
+      } else {
+        location.href = "../User-3.html";
+        sessionStorage.setItem("user1", JSON.stringify(dataSet));
+      }
+    });
   }
 }
 
@@ -184,6 +212,14 @@ function UserPage2() {
   let Tphone = document.getElementById("Tphone").value;
   let salary = document.getElementById("salary").value;
 
+  let dataSet = {
+    u2_fname: fname,
+    u2_lname: lname,
+    u2_phone: phone,
+    u2_Tphone: Tphone,
+    u2_salary: salary,
+  };
+
   if (
     fname == "" ||
     lname == "" ||
@@ -192,6 +228,9 @@ function UserPage2() {
     salary == ""
   ) {
     alert("กรุณาระบุข้อมูลให้ครบถ้วนและถูกต้อง");
+  } else {
+    location.href = "../User-3.html";
+    sessionStorage.setItem("user2", JSON.stringify(dataSet));
   }
 }
 
@@ -206,6 +245,31 @@ function UserPage3() {
   let Tphone = document.getElementById("Tphone").value;
   let salary = document.getElementById("salary").value;
   let status = document.querySelector('input[name="status"]:checked').value;
+
+  let dataSet = {
+    u3_fname: fname,
+    u3_lname: lname,
+    u3_position: position,
+    u3_TypeP: TypeP,
+    u3_positionJ: positionJ,
+    u3_idPo: idPo,
+    u3_phone: phone,
+    u3_Tphone: Tphone,
+    u3_salary: salary,
+    u3_status: status,
+  };
+
+  const user3 = sessionStorage.getItem("user3");
+  const user4 = sessionStorage.getItem("user4");
+
+  if (user3 != null) {
+    sessionStorage.removeItem("user3");
+  }
+
+  if (user4 != null) {
+    sessionStorage.removeItem("user4");
+  }
+
   if (
     fname == "" ||
     lname == "" ||
@@ -220,8 +284,10 @@ function UserPage3() {
     alert("กรุณาระบุข้อมูลให้ครบถ้วนและถูกต้อง");
   } else {
     if (status == "สมรส") {
+      sessionStorage.setItem("user3", JSON.stringify(dataSet));
       location.href = "./User-4.html";
     } else {
+      sessionStorage.setItem("user3", JSON.stringify(dataSet));
       location.href = "./User-5.html";
     }
   }
@@ -234,6 +300,14 @@ function UserPage4() {
   let Tphone = document.getElementById("Tphone").value;
   let salary = document.getElementById("salary").value;
 
+  let dataSet = {
+    u4_fname: fname,
+    u4_lname: lname,
+    u4_phone: phone,
+    u4_Tphone: Tphone,
+    u4_salary: salary,
+  };
+
   if (
     fname == "" ||
     lname == "" ||
@@ -242,6 +316,8 @@ function UserPage4() {
     salary == ""
   ) {
     alert("กรุณาระบุข้อมูลให้ครบถ้วนและถูกต้อง");
+  } else {
+    sessionStorage.setItem("user4", JSON.stringify(dataSet));
   }
 }
 
@@ -250,15 +326,87 @@ function UserPage5() {
   let Psalary = document.getElementById("Psalary").value;
   let salary = document.getElementById("salary").value;
 
+  let dataSet = {
+    u5_total: total,
+    u5_Psalary: Psalary,
+    u5_salary: salary,
+  };
+
+  const user5 = sessionStorage.getItem("user5");
+
+  if (user5 != null) {
+    sessionStorage.removeItem("user5");
+  }
+
   if (total == "" || Psalary == "" || salary == "") {
     alert("กรุณาระบุข้อมูลให้ครบถ้วนและถูกต้อง");
   } else {
+    sessionStorage.setItem("user5", JSON.stringify(dataSet));
     location.href = "./UserConfirm.html";
   }
 }
 
-function UserConfirm() {
+async function UserConfirm() {
   let check = document.getElementById("myChecked").value;
+
+  let user1 = sessionStorage.getItem("user1");
+  let user2 = sessionStorage.getItem("user2");
+  let user3 = sessionStorage.getItem("user3");
+  let user4 = sessionStorage.getItem("user4");
+  let user5 = sessionStorage.getItem("user5");
+  console.log(user1);
+  console.log(user2);
+  console.log(user3);
+  console.log(user4);
+  console.log(user5);
+
+  let getUsertables = `${API}/api/usertables`;
+  if (user1 != null) {
+    parseUasr1 = JSON.parse(user1);
+    console.log(parseUasr1);
+    let id = parseUasr1.uId;
+    console.log(id);
+
+    let data = {
+      marriagetable: parseUasr1.marriagetable,
+      uAffiliation: parseUasr1.uAffiliation,
+      uDivision: parseUasr1.uDivision,
+      uFname: parseUasr1.uFname,
+      uLname: parseUasr1.uLname,
+      uLoan: parseUasr1.uLoan,
+      uPhone: parseUasr1.uPhone,
+      uPosition: parseUasr1.uPosition,
+      uSalary: parseUasr1.uSalary,
+      uSalaryid: parseUasr1.uSalaryid,
+      uStartdate: parseUasr1.uStartdate,
+      uStatus: parseUasr1.uStatus,
+      uTel: parseUasr1.uTel,
+      uTitle: parseUasr1.uTitle,
+      uType: parseUasr1.uType,
+    };
+    let raw = await JSON.stringify(data);
+
+    let getUsertablesById = `${getUsertables}/${id}`;
+
+    var xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+
+    xhr.addEventListener("readystatechange", function () {
+      if (this.readyState === 4) {
+        console.log(this.responseText);
+      }
+    });
+
+    xhr.open("PUT", getUsertablesById);
+    xhr.setRequestHeader("Content-Type", "application/json");
+
+    xhr.send(raw);
+  }
+
+  if (user2 != null) {
+    console.log("ppllpp2");
+  }
+
   if (check == true) {
     location.href = "./index.html";
   } else {
