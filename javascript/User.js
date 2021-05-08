@@ -1,5 +1,5 @@
 // API
-var API = "http://localhost:5000";
+var API = "http://localhost:27615";
 
 async function UserPage1() {
   let title = document.querySelector('input[name="title"]:checked').value;
@@ -13,7 +13,6 @@ async function UserPage1() {
   let Tphone = document.getElementById("Tphone").value;
   let status = document.querySelector('input[name="status"]:checked').value;
 
-  console.log("cccc", title);
   let dataSet = {
     uId: "",
     uTitle: title,
@@ -23,14 +22,13 @@ async function UserPage1() {
     uType: TypeP,
     uSalaryid: idSalary,
     uStartdate: "",
-    uSalary: 22090,
-    uLoan: "",
+    uSalary: 0,
+    uLoan: 0,
     uAffiliation: positionJ,
     uTel: Tphone,
     uPhone: phone,
     uStatus: status,
-    uDivision: "ว่าง",
-    marriagetable: "",
+    uDivision: "",
   };
 
   const user1 = sessionStorage.getItem("user1");
@@ -55,30 +53,53 @@ async function UserPage1() {
   ) {
     alert("กรุณาระบุข้อมูลให้ครบถ้วนและถูกต้อง");
   } else {
-    let getUsertables = `${API}/api/usertables`;
-    $.get(getUsertables, async function (Usertables) {
-      for (let index = 0; index < Usertables.length; index++) {
-        const element = Usertables[index];
-        const uFname = element.uFname;
-        const uLname = element.uLname;
+    const response = await axios.get(`${API}/api/usertables`);
+    let Usertables = response.data;
 
-        if (uFname == fname && uLname == lname) {
-          console.log(element);
-          dataSet.uId = element.uId;
-        }
+    for (let index = 0; index < Usertables.length; index++) {
+      const element = Usertables[index];
+      const uFname = element.uFname;
+      const uLname = element.uLname;
+
+      if (uFname == fname && uLname == lname) {
+        dataSet.uId = element.uId;
+        dataSet.uStartdate = element.uStartdate;
+        dataSet.uSalary = element.uSalary;
+        dataSet.uDivision = element.uDivision;
       }
-      if (status == "สมรส") {
-        location.href = "../User-2.html";
-        sessionStorage.setItem("user1", JSON.stringify(dataSet));
-      } else {
-        location.href = "../User-3.html";
-        sessionStorage.setItem("user1", JSON.stringify(dataSet));
-      }
-    });
+    }
+
+    if (status == "สมรส") {
+      location.href = "../User-2.html";
+      sessionStorage.setItem("user1", JSON.stringify(dataSet));
+    } else {
+      location.href = "../User-3.html";
+      sessionStorage.setItem("user1", JSON.stringify(dataSet));
+    }
   }
 }
 
-function checkName() {
+function dateNow() {
+  let timestamp = Date.now();
+  let date = moment(timestamp).format("DD-MM");
+  let yare_str = moment(timestamp).format("YYYY");
+  let year = parseInt(yare_str) + 543;
+  let sumDate = `${date}-${year}`;
+  return sumDate;
+}
+
+function getYear() {
+  let timestamp = Date.now();
+  let yare_str = moment(timestamp).format("YYYY");
+  let month_str = moment(timestamp).format("MM");
+  let data = {
+    yare: yare_str,
+    month: month_str,
+  };
+  return data;
+}
+
+async function checkName() {
   let fname = document.getElementById("Fname").value;
   let lname = document.getElementById("Lname").value;
   let check_name = false;
@@ -86,26 +107,26 @@ function checkName() {
   if (fname == "" || lname == "") {
     console.log("ใส่ข้อมูลก่อนตะ");
   } else {
-    let getUsertables = `${API}/api/usertables`;
-    $.get(getUsertables, function (Usertables) {
-      for (let index = 0; index < Usertables.length; index++) {
-        const element = Usertables[index];
-        const uFname = element.uFname;
-        const uLname = element.uLname;
+    const response = await axios.get(`${API}/api/usertables`);
+    let Usertables = response.data;
 
-        if (uFname == fname && uLname == lname) {
-          addDataByUser1(element);
-          check_name = true;
-        }
+    for (let index = 0; index < Usertables.length; index++) {
+      const element = Usertables[index];
+      const uFname = element.uFname;
+      const uLname = element.uLname;
+
+      if (uFname == fname && uLname == lname) {
+        addDataByUser1(element);
+        check_name = true;
       }
-      if (check_name == false) {
-        console.log("ไม่มีข้อมูลที่ตรงกัน");
-      }
-    });
+    }
+    if (check_name == false) {
+      console.log("ไม่มีข้อมูลที่ตรงกัน");
+    }
   }
 }
 
-function checkName3() {
+async function checkName3() {
   let fname = document.getElementById("Fname").value;
   let lname = document.getElementById("Lname").value;
   let check_name = false;
@@ -113,29 +134,25 @@ function checkName3() {
   if (fname == "" || lname == "") {
     console.log("ใส่ข้อมูลก่อนตะ");
   } else {
-    let getUsertables = `${API}/api/usertables`;
-    $.get(getUsertables, function (Usertables) {
-      for (let index = 0; index < Usertables.length; index++) {
-        const element = Usertables[index];
-        const uFname = element.uFname;
-        const uLname = element.uLname;
-        const uPosition = element.uPosition;
-        // const uLname = element.uLname;
-        // console.log(element);
-        if (uFname == fname && uLname == lname) {
-          addDataByUser3(element);
-          check_name = true;
-        }
+    const response = await axios.get(`${API}/api/usertables`);
+    let Usertables = response.data;
+
+    for (let index = 0; index < Usertables.length; index++) {
+      const element = Usertables[index];
+      const uFname = element.uFname;
+      const uLname = element.uLname;
+      if (uFname == fname && uLname == lname) {
+        addDataByUser3(element);
+        check_name = true;
       }
-      if (check_name == false) {
-        console.log("ไม่มีข้อมูลที่ตรงกัน");
-      }
-    });
+    }
+    if (check_name == false) {
+      console.log("ไม่มีข้อมูลที่ตรงกัน");
+    }
   }
 }
 
 function addDataByUser1(ele) {
-  console.log(ele);
   let select = document.all;
 
   document.getElementById("position").value = ele.uPosition;
@@ -184,8 +201,8 @@ function addDataByUser3(ele) {
   document.getElementById("phone").value = ele.uPhone;
   document.getElementById("Tphone").value = ele.uTel;
 
-  var single = document.getElementById("customRadio").value;
-  var marraige = document.getElementById("customRadio2").value;
+  let single = document.getElementById("customRadio").value;
+  let marraige = document.getElementById("customRadio2").value;
   if (ele.uStatus == single) {
     document.getElementById("customRadio").checked = true;
   } else if (ele.uStatus == marraige) {
@@ -194,8 +211,8 @@ function addDataByUser3(ele) {
     document.getElementById("customRadio3").checked = true;
   }
 
-  var mr = document.getElementById("title1").value;
-  var ms = document.getElementById("title2").value;
+  let mr = document.getElementById("title1").value;
+  let ms = document.getElementById("title2").value;
   if (ele.uTitle == mr) {
     document.getElementById("title1").checked = true;
   } else if (ele.uTitle == ms) {
@@ -234,7 +251,8 @@ function UserPage2() {
   }
 }
 
-function UserPage3() {
+async function UserPage3() {
+  let title = document.querySelector('input[name="title"]:checked').value;
   let fname = document.getElementById("Fname").value;
   let lname = document.getElementById("Lname").value;
   let position = document.getElementById("position").value;
@@ -247,16 +265,21 @@ function UserPage3() {
   let status = document.querySelector('input[name="status"]:checked').value;
 
   let dataSet = {
-    u3_fname: fname,
-    u3_lname: lname,
-    u3_position: position,
-    u3_TypeP: TypeP,
-    u3_positionJ: positionJ,
-    u3_idPo: idPo,
-    u3_phone: phone,
-    u3_Tphone: Tphone,
-    u3_salary: salary,
-    u3_status: status,
+    uId: "",
+    uTitle: title,
+    uFname: fname,
+    uLname: lname,
+    uPosition: position,
+    uType: TypeP,
+    uSalaryid: "",
+    uStartdate: "",
+    uSalary: salary,
+    uLoan: 0,
+    uAffiliation: positionJ,
+    uTel: Tphone,
+    uPhone: phone,
+    uStatus: status,
+    uDivision: idPo,
   };
 
   const user3 = sessionStorage.getItem("user3");
@@ -265,7 +288,6 @@ function UserPage3() {
   if (user3 != null) {
     sessionStorage.removeItem("user3");
   }
-
   if (user4 != null) {
     sessionStorage.removeItem("user4");
   }
@@ -283,6 +305,21 @@ function UserPage3() {
   ) {
     alert("กรุณาระบุข้อมูลให้ครบถ้วนและถูกต้อง");
   } else {
+    const response = await axios.get(`${API}/api/usertables`);
+    let Usertables = response.data;
+
+    for (let index = 0; index < Usertables.length; index++) {
+      const element = Usertables[index];
+      const uFname = element.uFname;
+      const uLname = element.uLname;
+
+      if (uFname == fname && uLname == lname) {
+        dataSet.uId = element.uId;
+        dataSet.uSalaryid = element.uSalaryid;
+        dataSet.uStartdate = element.uStartdate;
+      }
+    }
+
     if (status == "สมรส") {
       sessionStorage.setItem("user3", JSON.stringify(dataSet));
       location.href = "./User-4.html";
@@ -321,10 +358,26 @@ function UserPage4() {
   }
 }
 
+function setdataUser5() {
+  let user1 = sessionStorage.getItem("user1");
+  let parseUasr1 = JSON.parse(user1);
+  document.getElementById("salary").value = parseUasr1.uSalary;
+}
+
 function UserPage5() {
+  let salary = document.getElementById("salary").value;
   let total = document.getElementById("total").value;
   let Psalary = document.getElementById("Psalary").value;
-  let salary = document.getElementById("salary").value;
+
+  let user1 = sessionStorage.getItem("user1");
+  let user3 = sessionStorage.getItem("user3");
+  let parseUasr1 = JSON.parse(user1);
+  let parseUasr3 = JSON.parse(user3);
+  let date_U = parseUasr1.uStartdate.split("-");
+  let date_S = parseUasr3.uStartdate.split("-");
+  let yearNow = getYear();
+  let result_year_U = parseInt(yearNow.yare) + 543 - parseInt(date_U[2]);
+  let result_year_S = parseInt(yearNow.yare) + 543 - parseInt(date_S[2]);
 
   let dataSet = {
     u5_total: total,
@@ -333,16 +386,36 @@ function UserPage5() {
   };
 
   const user5 = sessionStorage.getItem("user5");
-
   if (user5 != null) {
     sessionStorage.removeItem("user5");
   }
 
   if (total == "" || Psalary == "" || salary == "") {
     alert("กรุณาระบุข้อมูลให้ครบถ้วนและถูกต้อง");
-  } else {
+  } else if (result_year_U == 2 || result_year_S == 2) {
     sessionStorage.setItem("user5", JSON.stringify(dataSet));
-    location.href = "./UserConfirm.html";
+    if (result_year_U == 2) {
+      if (parseInt(yearNow.month) > parseInt(date_U[1])) {
+        location.href = "./UserConfirm.html";
+      } else {
+        console.log("อายุงานของผู้กู้ยังไม่ถึง");
+      }
+    }
+    if (result_year_S == 2) {
+      if (parseInt(yearNow.month) > parseInt(date_S[1])) {
+        location.href = "./UserConfirm.html";
+      } else {
+        console.log("อายุงานของผู้ค้ำยังไม่ถึง");
+      }
+    }
+  } else {
+    console.log("else");
+    if (result_year_U > 2 && result_year_S > 2) {
+      sessionStorage.setItem("user5", JSON.stringify(dataSet));
+      location.href = "./UserConfirm.html";
+    } else {
+      alert("ระบบได้ทำการตรวจสอบแล้วคุณไม่อยู่ในเงื่อนไขที่สามารถกู้ยืมได้");
+    }
   }
 }
 
@@ -354,57 +427,48 @@ async function UserConfirm() {
   let user3 = sessionStorage.getItem("user3");
   let user4 = sessionStorage.getItem("user4");
   let user5 = sessionStorage.getItem("user5");
-  console.log(user1);
-  console.log(user2);
-  console.log(user3);
-  console.log(user4);
-  console.log(user5);
+  // console.log(user2);
+  // console.log(user3);
+  // console.log(user4);
+  // console.log(user5);
 
   let getUsertables = `${API}/api/usertables`;
   if (user1 != null) {
     parseUasr1 = JSON.parse(user1);
-    console.log(parseUasr1);
     let id = parseUasr1.uId;
-    console.log(id);
+    // console.log(parseUasr1);
+    // console.log(id);
 
-    let data = {
-      marriagetable: parseUasr1.marriagetable,
-      uAffiliation: parseUasr1.uAffiliation,
-      uDivision: parseUasr1.uDivision,
-      uFname: parseUasr1.uFname,
-      uLname: parseUasr1.uLname,
-      uLoan: parseUasr1.uLoan,
-      uPhone: parseUasr1.uPhone,
-      uPosition: parseUasr1.uPosition,
-      uSalary: parseUasr1.uSalary,
-      uSalaryid: parseUasr1.uSalaryid,
-      uStartdate: parseUasr1.uStartdate,
-      uStatus: parseUasr1.uStatus,
-      uTel: parseUasr1.uTel,
-      uTitle: parseUasr1.uTitle,
-      uType: parseUasr1.uType,
-    };
-    let raw = await JSON.stringify(data);
-
-    let getUsertablesById = `${getUsertables}/${id}`;
-
-    var xhr = new XMLHttpRequest();
-    xhr.withCredentials = true;
-
-    xhr.addEventListener("readystatechange", function () {
-      if (this.readyState === 4) {
-        console.log(this.responseText);
-      }
-    });
-
-    xhr.open("PUT", getUsertablesById);
-    xhr.setRequestHeader("Content-Type", "application/json");
-
-    xhr.send(raw);
+    // Send a POST request
+    // await axios.put(`${getUsertables}/${id}`, parseUasr1);
   }
 
   if (user2 != null) {
-    console.log("ppllpp2");
+    console.log("user2");
+    parseUasr2 = JSON.parse(user2);
+    console.log(parseUasr2);
+  }
+
+  if (user3 != null) {
+    parseUasr3 = JSON.parse(user3);
+    let id = parseUasr3.uId;
+    // console.log(parseUasr3);
+    // console.log(id);
+
+    // Send a POST request
+    // await axios.put(`${getUsertables}/${id}`, parseUasr3);
+  }
+
+  if (user4 != null) {
+    console.log("user4");
+    parseUasr4 = JSON.parse(user4);
+    console.log(parseUasr4);
+  }
+
+  if (user5 != null) {
+    console.log("user5");
+    parseUasr5 = JSON.parse(user5);
+    console.log(parseUasr5);
   }
 
   if (check == true) {

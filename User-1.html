@@ -55,7 +55,7 @@
           <h style="margin-left: 2%; margin-top: 2%"> :: ข้อมูลส่วนบุคคล :: </h>
           <div class="card" style="background-color: darkgrey; margin: 2%">
             <!-------form------->
-            <div class="needs-validation" style="margin: 2%">
+            <div style="margin: 2%">
               <label for="title" style="margin-right: 2%">คำนำหน้า :</label>
               <div class="custom-control custom-radio custom-control-inline">
                 <input
@@ -99,10 +99,6 @@
                     name="Fname"
                     required
                   />
-                  <div class="valid-feedback">Valid.</div>
-                  <div class="invalid-feedback">
-                    Please fill out this field.
-                  </div>
                 </div>
                 <div class="form-group col-sm-6">
                   <label for="Lname">นามสกุล:</label>
@@ -114,10 +110,7 @@
                     name="Lname"
                     required
                   />
-                  <div class="valid-feedback">Valid.</div>
-                  <div class="invalid-feedback">
-                    Please fill out this field.
-                  </div>
+
                   <div style="margin-top: 2%; text-align: end">
                     <button
                       type="submit"
@@ -142,10 +135,6 @@
                     name="position"
                     required
                   />
-                  <div class="valid-feedback">Valid.</div>
-                  <div class="invalid-feedback">
-                    Please fill out this field.
-                  </div>
                 </div>
                 <div class="form-group col-sm-6">
                   <label for="TypeP">ประเภทบุคลากร:</label>
@@ -172,10 +161,6 @@
                     name="positionJ"
                     required
                   />
-                  <div class="valid-feedback">Valid.</div>
-                  <div class="invalid-feedback">
-                    Please fill out this field.
-                  </div>
                 </div>
                 <div class="form-group col-sm-6">
                   <label for="idSalary">รหัสเงินเดือน :</label>
@@ -187,10 +172,6 @@
                     name="idSalary"
                     required
                   />
-                  <div class="valid-feedback">Valid.</div>
-                  <div class="invalid-feedback">
-                    Please fill out this field.
-                  </div>
                 </div>
               </div>
 
@@ -205,10 +186,6 @@
                     name="phone"
                     required
                   />
-                  <div class="valid-feedback">Valid.</div>
-                  <div class="invalid-feedback">
-                    Please fill out this field.
-                  </div>
                 </div>
                 <div class="form-group col-sm-6">
                   <label for="Tphone">มือถือ:</label>
@@ -220,10 +197,6 @@
                     name="Tphone"
                     required
                   />
-                  <div class="valid-feedback">Valid.</div>
-                  <div class="invalid-feedback">
-                    Please fill out this field.
-                  </div>
                 </div>
               </div>
               <!-----check----->
@@ -284,21 +257,17 @@
             <nav aria-label="...">
               <ul class="pagination">
                 <li class="page-item active">
-                  <a class="page-link"
-                    >1 <span class="sr-only">(current)</span></a
-                  >
+                  <a class="page-link">1</a>
                 </li>
                 <li class="page-item disabled">
                   <a class="page-link" href="#">2</a>
                 </li>
-
                 <li class="page-item disabled">
                   <a class="page-link" href="#">3</a>
                 </li>
                 <li class="page-item disabled">
                   <a class="page-link" href="#">4</a>
                 </li>
-
                 <li class="page-item disabled">
                   <a class="page-link" href="#">5</a>
                 </li>
@@ -327,7 +296,15 @@
     <!-- Custom scripts for this template -->
     <script src="js/stylish-portfolio.min.js"></script>
 
-    <!-- foder -->
+    <!-- cdn axios, moment -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- user -->
     <script src="./javascript/User.js"></script>
 
     <style>
