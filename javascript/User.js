@@ -56,7 +56,7 @@ function checkName() {
   let check_name = false;
 
   if (fname == "" || lname == "") {
-    console.log("ใส่ข้อมูลก่อนตะ");
+    console.log("กรุณาระบุข้อมูลให้ครบถ้วน");
   } else {
     let getUsertables = `${API}/api/usertables`;
     $.get(getUsertables, function (Usertables) {
@@ -83,7 +83,7 @@ function checkName3() {
   let check_name = false;
 
   if (fname == "" || lname == "") {
-    console.log("ใส่ข้อมูลก่อนตะ");
+    console.log("กรุณาระบุข้อมูลให้ครบถ้วน");
   } else {
     let getUsertables = `${API}/api/usertables`;
     $.get(getUsertables, function (Usertables) {
@@ -292,4 +292,8 @@ function Userlogin() {
   } else {
     location.href = "./tableUser.html";
   }
+}
+
+function confirmPaper(){
+  location.href = "./confirmPaper.html";
 }
