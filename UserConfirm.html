@@ -34,7 +34,7 @@
     <link href="css/stylish-portfolio.min.css" rel="stylesheet" />
   </head>
 
-  <body style="background-color: rgb(100, 136, 214)">
+  <body style="background-color: rgb(100, 136, 214)" onload="setmoney_space()">
     <!-- Navigation -->
     <nav style="background-color: white; color: #000">
       <ul class="nav justify-content-start">
@@ -64,57 +64,7 @@
                         
                       </tr>
                     </thead>
-                    <tbody style="text-align: center;">
-                      <tr>
-                        <td>1</td>
-                        <td></td>
-                        
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td></td>
-                        
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td></td>
-                        
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td></td>
-                        
-                      </tr>
-                      <tr>
-                        <td>5</td>
-                        <td></td>
-                        
-                      </tr>
-                      <tr>
-                        <td>6</td>
-                        <td></td>
-                        
-                      </tr>
-                      <tr>
-                        <td>7</td>
-                        <td></td>
-                        
-                      </tr>
-                      <tr>
-                        <td>8</td>
-                        <td></td>
-                        
-                      </tr>
-                      <tr>
-                        <td>9</td>
-                        <td></td>
-                        
-                      </tr>
-                      <tr>
-                        <td>10</td>
-                        <td></td>
-                        
-                      </tr>
+                    <tbody style="text-align: center;" id="data_space">
                     </tbody>
                   </table>
                 </div>
@@ -165,8 +115,13 @@
     <!-- Custom scripts for this template -->
     <script src="js/stylish-portfolio.min.js"></script>
 
-    <!-- cdn axios -->
+    <!-- cdn axios, moment -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+      crossorigin="anonymous"
+    ></script>
 
     <!--------user-------->
     <script src="./javascript/User.js"></script>

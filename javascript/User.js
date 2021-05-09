@@ -29,6 +29,7 @@ async function UserPage1() {
     uPhone: phone,
     uStatus: status,
     uDivision: "",
+    uYearout: "",
   };
 
   const user1 = sessionStorage.getItem("user1");
@@ -66,15 +67,16 @@ async function UserPage1() {
         dataSet.uStartdate = element.uStartdate;
         dataSet.uSalary = element.uSalary;
         dataSet.uDivision = element.uDivision;
+        dataSet.uYearout = element.uYearout;
       }
     }
 
     if (status == "สมรส") {
+      sessionStorage.setItem("user1", JSON.stringify(dataSet));
       location.href = "../User-2.html";
-      sessionStorage.setItem("user1", JSON.stringify(dataSet));
     } else {
-      location.href = "../User-3.html";
       sessionStorage.setItem("user1", JSON.stringify(dataSet));
+      location.href = "../User-3.html";
     }
   }
 }
@@ -273,13 +275,14 @@ async function UserPage3() {
     uType: TypeP,
     uSalaryid: "",
     uStartdate: "",
-    uSalary: salary,
+    uSalary: parseInt(salary),
     uLoan: 0,
     uAffiliation: positionJ,
     uTel: Tphone,
     uPhone: phone,
     uStatus: status,
     uDivision: idPo,
+    uYearout: "",
   };
 
   const user3 = sessionStorage.getItem("user3");
@@ -317,6 +320,7 @@ async function UserPage3() {
         dataSet.uId = element.uId;
         dataSet.uSalaryid = element.uSalaryid;
         dataSet.uStartdate = element.uStartdate;
+        dataSet.uYearout = element.uYearout;
       }
     }
 
@@ -355,6 +359,7 @@ function UserPage4() {
     alert("กรุณาระบุข้อมูลให้ครบถ้วนและถูกต้อง");
   } else {
     sessionStorage.setItem("user4", JSON.stringify(dataSet));
+    location.href = "./User-5.html";
   }
 }
 
@@ -375,13 +380,16 @@ function UserPage5() {
   let parseUasr3 = JSON.parse(user3);
   let date_U = parseUasr1.uStartdate.split("-");
   let date_S = parseUasr3.uStartdate.split("-");
+  let yearout_U = parseUasr1.uYearout;
+  let yearout_S = parseUasr3.uYearout;
   let yearNow = getYear();
-  let result_year_U = parseInt(yearNow.yare) + 543 - parseInt(date_U[2]);
-  let result_year_S = parseInt(yearNow.yare) + 543 - parseInt(date_S[2]);
+  let year_BE = parseInt(yearNow.yare) + 543;
 
+  let result_year_U = year_BE - parseInt(date_U[2]);
+  let result_year_S = year_BE - parseInt(date_S[2]);
+  let result_yearout_U = parseInt(yearout_U) - year_BE;
+  let result_yearout_S = parseInt(yearout_S) - year_BE;
   let moneyT = parseInt(salary) * 0.1;
-  console.log(moneyT);
-  console.log(total);
 
   let dataSet = {
     u5_total: total,
@@ -392,6 +400,7 @@ function UserPage5() {
   const user5 = sessionStorage.getItem("user5");
   if (user5 != null) {
     sessionStorage.removeItem("user5");
+    location.href = "./UserConfirm.html";
   }
 
   if (total == "" || Psalary == "" || salary == "") {
@@ -400,27 +409,29 @@ function UserPage5() {
     sessionStorage.setItem("user5", JSON.stringify(dataSet));
     if (parseInt(Psalary) <= 6000) {
       if (parseInt(total) >= moneyT) {
-        if (result_year_U == 2) {
-          if (parseInt(yearNow.month) > parseInt(date_U[1])) {
+        if (result_yearout_U > 0 && result_yearout_S > 0) {
+          if (result_year_U == 2) {
+            if (parseInt(yearNow.month) > parseInt(date_U[1])) {
+              location.href = "./UserConfirm.html";
+            } else {
+              console.log("อายุงานของคุณไม่ถึง 2 ปี");
+            }
+          } else if (result_year_S == 2) {
+            if (parseInt(yearNow.month) > parseInt(date_S[1])) {
+              location.href = "./UserConfirm.html";
+            } else {
+              console.log("อายุงานของคุณไม่ถึง 2 ปี");
+            }
+          } else if (result_year_U > 2 && result_year_S > 2) {
+            sessionStorage.setItem("user5", JSON.stringify(dataSet));
             location.href = "./UserConfirm.html";
           } else {
-            alert("อายุงานของคุณไม่ถึง 2 ปี");
+            alert(
+              "ระบบได้ทำการตรวจสอบแล้วคุณไม่อยู่ในเงื่อนไขที่สามารถกู้ยืมได้"
+            );
           }
-        }
-        if (result_year_S == 2) {
-          if (parseInt(yearNow.month) > parseInt(date_S[1])) {
-            location.href = "./UserConfirm.html";
-          } else {
-            alert("อายุงานของคุณไม่ถึง 2 ปี");
-          }
-        }
-        if (result_year_U > 2 && result_year_S > 2) {
-          sessionStorage.setItem("user5", JSON.stringify(dataSet));
-          location.href = "./UserConfirm.html";
         } else {
-          alert(
-            "ระบบได้ทำการตรวจสอบแล้วคุณไม่อยู่ในเงื่อนไขที่สามารถกู้ยืมได้"
-          );
+          console.log("อายุงานกำลังจะหมด");
         }
       } else {
         alert("เงินคงเหลือสุทธิของท่านน้อยกว่าเกณฑ์กำหนด 10%");
@@ -432,58 +443,120 @@ function UserPage5() {
 }
 
 async function UserConfirm() {
-  let check = document.getElementById("myChecked").value;
+  let check = document.querySelector('input[name="checkbox"]:checked');
+  let user_married = {
+    u: "",
+    s: "",
+  };
+  let getUsertables = `${API}/api/usertables`;
+  let getMarriagetable = `${API}/api/marriagetables`;
+  let getLoantable = `${API}/api/loantables`;
+  let getPaymenttable = `${API}/api/paymenttables`;
 
   let user1 = sessionStorage.getItem("user1");
   let user2 = sessionStorage.getItem("user2");
   let user3 = sessionStorage.getItem("user3");
   let user4 = sessionStorage.getItem("user4");
   let user5 = sessionStorage.getItem("user5");
-  // console.log(user2);
-  // console.log(user3);
-  // console.log(user4);
-  // console.log(user5);
 
-  let getUsertables = `${API}/api/usertables`;
-  if (user1 != null) {
-    parseUasr1 = JSON.parse(user1);
-    let id = parseUasr1.uId;
-    // console.log(parseUasr1);
-    // console.log(id);
+  let parseUasr1 = JSON.parse(user1);
+  let parseUasr3 = JSON.parse(user3);
+  let id_u1 = parseUasr1.uId;
+  let id_u3 = parseUasr3.uId;
+  if (check != null) {
+    if (user1 != null) {
+      // Send a PUT request
+      await axios.put(`${getUsertables}/${id_u1}`, parseUasr1);
+    }
+    if (user2 != null) {
+      let parseUasr2 = JSON.parse(user2);
 
-    // Send a POST request
-    // await axios.put(`${getUsertables}/${id}`, parseUasr1);
-  }
+      const response = await axios.get(getMarriagetable);
 
-  if (user2 != null) {
-    console.log("user2");
-    parseUasr2 = JSON.parse(user2);
-    console.log(parseUasr2);
-  }
+      let dataset = {
+        kMarriage: response.data.length + 1,
+        uId: id_u1,
+        mFname: parseUasr2.u2_fname,
+        mLname: parseUasr2.u2_lname,
+        mTel: parseUasr2.u2_Tphone,
+        mPhone: parseUasr2.u2_phone,
+        mSalary: parseInt(parseUasr2.u2_salary),
+      };
 
-  if (user3 != null) {
-    parseUasr3 = JSON.parse(user3);
-    let id = parseUasr3.uId;
-    // console.log(parseUasr3);
-    // console.log(id);
+      // Send a POST request
+      await axios.post(getMarriagetable, dataset);
+      user_married.u = dataset;
+    }
+    if (user4 != null) {
+      let parseUasr4 = JSON.parse(user4);
+      const response = await axios.get(getMarriagetable);
 
-    // Send a POST request
-    // await axios.put(`${getUsertables}/${id}`, parseUasr3);
-  }
+      let dataset = {
+        kMarriage: response.data.length + 1,
+        uId: id_u3,
+        mFname: parseUasr4.u4_fname,
+        mLname: parseUasr4.u4_lname,
+        mTel: parseUasr4.u4_Tphone,
+        mPhone: parseUasr4.u4_phone,
+        mSalary: parseInt(parseUasr4.u4_salary),
+      };
+      // Send a POST request
+      await axios.post(getMarriagetable, dataset);
+      user_married.s = dataset;
+    }
+    if (user3 != null) {
+      console.log(parseUasr3);
+      // Send a PUT request
+      await axios.put(`${getUsertables}/${id_u3}`, parseUasr3);
+    }
+    if (user5 != null) {
+      let parseUasr5 = JSON.parse(user5);
+      let money_space = parseUasr5.u5_Psalary / 10;
 
-  if (user4 != null) {
-    console.log("user4");
-    parseUasr4 = JSON.parse(user4);
-    console.log(parseUasr4);
-  }
+      const response = await axios.get(getLoantable);
+      const response_payment = await axios.get(getPaymenttable);
 
-  if (user5 != null) {
-    console.log("user5");
-    parseUasr5 = JSON.parse(user5);
-    console.log(parseUasr5);
-  }
+      let id_married = {
+        u: null,
+        s: null,
+      };
+      if (typeof user_married.u === "object") {
+        id_married.u = user_married.u.kMarriage;
+      }
+      if (typeof user_married.s === "object") {
+        id_married.s = user_married.s.kMarriage;
+      }
 
-  if (check == true) {
+      let dataset = {
+        kLoan: response.data.length + 1,
+        uId: id_u1,
+        loantype: "ตัดชุดครุยบุคลากร",
+        loanamount: parseInt(parseUasr5.u5_Psalary),
+        sId: id_u3,
+        loandate: dateNow(),
+        confirmdate: "",
+        depositdate: "",
+        smId: id_married.s,
+        umId: id_married.u,
+        lStatus: "สัญญายังไม่สิ้นสุด",
+      };
+      // Send a POST request
+      await axios.post(getLoantable, dataset);
+
+      let setpayment = {
+        kPaymentt: response_payment.data.length + 1,
+        uId: id_u1,
+        loanamount: parseInt(parseUasr5.u5_Psalary),
+        batch: "10",
+        batchamount: money_space,
+        lastpaid: 0,
+        timepaid: "0",
+        total: 0,
+        balance: parseInt(parseUasr5.u5_Psalary),
+      };
+      // Send a POST request
+      await axios.post(getPaymenttable, setpayment);
+    }
     location.href = "./index.html";
   } else {
     alert("กรุณาตรวจสอบเงื่อนไขให้ถูกต้อง");
@@ -509,4 +582,23 @@ function Adminlogin() {
 
 function confirmPaper() {
   location.href = "./confirmPaper.html";
+}
+
+function setmoney_space() {
+  let user5 = sessionStorage.getItem("user5");
+  parseUasr5 = JSON.parse(user5);
+  let space = 10;
+  let money_space = parseUasr5.u5_Psalary / space;
+
+  let data = [];
+  for (let index = 0; index < space; index++) {
+    let space_index = index + 1;
+    data.push(`<tr>
+              <td>${space_index}</td>
+              <td>${money_space}</td>
+              </tr>`);
+  }
+  $("#data_space").append();
+  let table = `${data}`;
+  $("#data_space").append(table);
 }

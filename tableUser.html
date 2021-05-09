@@ -34,7 +34,7 @@
     <link href="css/stylish-portfolio.min.css" rel="stylesheet" />
   </head>
 
-  <body id="page-top">
+  <body id="page-top" onload="setmoney_space()">
     <!-- Navigation -->
     <a class="menu-toggle rounded" href="#">
       <i class="fas fa-bars"></i>
@@ -57,86 +57,30 @@
       </ul>
     </nav>
 
-    <div class="masthead " style="text-align: center;">
-        <div class="container" style="text-align: center;margin-left: 25%;">
-          <div
-            class="card"
-            style=" width: 700px;"
+    <div class="masthead" style="text-align: center">
+      <div class="container" style="text-align: center; margin-left: 25%">
+        <div class="card" style="width: 700px">
+          <h3
+            class="mb-sm-2"
+            style="text-align: center; margin-top: 5%; margin-bottom: 5%"
           >
-            <h3
-              class="mb-sm-2"
-              style="text-align: center; margin-top: 5%; margin-bottom: 5%"
-            >
-              สำหรับดูรายการที่ชำระ
-            </h3>
-            <div style=" margin-top: 2% ;margin-left: 2%;margin-right: 2%">
-                <table class="table table-bordered " >
-                  <thead class="thead-dark">
-                    <tr>
-                      <th style="text-align: center;">งวดที่</th>
-                      <th style="text-align: center;">จำนวนเงินที่ต้องชำระต่องวด</th>
-                     
-                      
-                    </tr>
-                  </thead>
-                  <tbody style="text-align: center;">
-                    <tr>
-                      <td>1</td>
-                      <td></td>
-                      
-                    </tr>
-                    <tr>
-                      <td>2</td>
-                      <td></td>
-                      
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td></td>
-                      
-                    </tr>
-                    <tr>
-                      <td>4</td>
-                      <td></td>
-                      
-                    </tr>
-                    <tr>
-                      <td>5</td>
-                      <td></td>
-                      
-                    </tr>
-                    <tr>
-                      <td>6</td>
-                      <td></td>
-                      
-                    </tr>
-                    <tr>
-                      <td>7</td>
-                      <td></td>
-                      
-                    </tr>
-                    <tr>
-                      <td>8</td>
-                      <td></td>
-                      
-                    </tr>
-                    <tr>
-                      <td>9</td>
-                      <td></td>
-                      
-                    </tr>
-                    <tr>
-                      <td>10</td>
-                      <td></td>
-                      
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-               <div class="row mt-sm-3">
-                 <div class="col-2"></div>
-                 <div class="col-10">
-                <h
+            สำหรับดูรายการที่ชำระ
+          </h3>
+          <div style="margin-top: 2%; margin-left: 2%; margin-right: 2%">
+            <table class="table table-bordered">
+              <thead class="thead-dark">
+                <tr>
+                  <th style="text-align: center">งวดที่</th>
+                  <th style="text-align: center">จำนวนเงินที่ต้องชำระต่องวด</th>
+                </tr>
+              </thead>
+              <tbody style="text-align: center" id="data_space"></tbody>
+            </table>
+          </div>
+          <div class="row mt-sm-3">
+            <div class="col-2"></div>
+            <div class="col-10">
+              <h
                 class="mb-sm-2"
                 style="text-align: center; margin-top: 5%; margin-bottom: 5%"
               >
@@ -146,42 +90,39 @@
                 type="text"
                 style="border: none; margin-left: 2%"
                 id="total"
+                value=""
+                disabled
               />
               <h>บาท</h>
             </div>
-               </div>
-               <div class="row mt-sm-3">
-                <div class="col-2"></div>
-                <div class="col-10">
-                <h
-                class="mb-sm-2"
-                style="text-align: center;"
-              >
-                คงเหลือ
-              </h>
+          </div>
+          <div class="row mt-sm-3">
+            <div class="col-2"></div>
+            <div class="col-10">
+              <h class="mb-sm-2" style="text-align: center"> คงเหลือ </h>
               <input
                 type="text"
                 style="border: none; margin-left: 2%"
                 id="balance"
+                value=""
+                disabled
               />
               <h>บาท</h>
             </div>
-               </div>
-            <div style="margin-bottom: 10%; text-align: center;margin-top: 7%;">
-              <button
-                type="submit"
-                class="btn btn-primary"
-                style="width: fit-content"
-                onclick="back()"
-              >
-                back
-              </button>
-            </div>
+          </div>
+          <div style="margin-bottom: 10%; text-align: center; margin-top: 7%">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              style="width: fit-content"
+              onclick="back()"
+            >
+              back
+            </button>
           </div>
         </div>
-      
+      </div>
     </div>
-
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
@@ -198,7 +139,10 @@
     <!-- Custom scripts for this template -->
     <script src="js/stylish-portfolio.min.js"></script>
 
+    <!-- cdn axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
     <!--------user-------->
-    <script src="./javascript/User.js"></script>
+    <script src="./javascript/moneyUser.js"></script>
   </body>
 </html>
