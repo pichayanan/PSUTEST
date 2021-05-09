@@ -33,9 +33,21 @@
     <!-- Custom CSS -->
     <link href="css/stylish-portfolio.min.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
-    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"
+      type="text/javascript"
+    ></script>
+    <link
+      href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
   </head>
 
   <body>
@@ -116,9 +128,15 @@
             ไม่ชำระตามกำหนด
           </a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="./problemAdmin.html">กรณี ผู้กู้ลาออก</a>
-            <a class="dropdown-item" href="./problemAdmin.html">กรณี ผู้กู้เสียชีวิต</a>
-            <a class="dropdown-item" href="./problemAdmin.html">กรณี ผู้กู้ติดต่อไม่ได้</a>
+            <a class="dropdown-item" href="./problemAdmin.html"
+              >กรณี ผู้กู้ลาออก</a
+            >
+            <a class="dropdown-item" href="./problemAdmin.html"
+              >กรณี ผู้กู้เสียชีวิต</a
+            >
+            <a class="dropdown-item" href="./problemAdmin.html"
+              >กรณี ผู้กู้ติดต่อไม่ได้</a
+            >
           </div>
         </li>
         <li class="nav-item mx-sm-3">
@@ -126,24 +144,26 @@
         </li>
       </ul>
     </nav>
-    <div class="masthead" class="container">
+    <div class="masthead">
       <div class="container" style="text-align: center">
         <div class="card my-sm-5 mx-sm-5">
-          <div style="text-align: end;">
-            
-          </div>
+          <div style="text-align: end"></div>
           <div class="row">
             <div class="col-sm-4"></div>
             <div class="col-sm-4">
-          <h2 style="margin-top: 2%">สัญญา</h2>
-        </div>
-        <div class="col-sm-4">
-          <form class="form-inline mt-sm-3">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-            <button class="btn btn-success" type="submit">Search</button>
-          </form>
-        </div>
-        </div>
+              <h2 style="margin-top: 2%">สัญญา</h2>
+            </div>
+            <div class="col-sm-4">
+              <form class="form-inline mt-sm-3">
+                <input
+                  class="form-control mr-sm-2"
+                  type="text"
+                  placeholder="Search"
+                />
+                <button class="btn btn-success" type="submit">Search</button>
+              </form>
+            </div>
+          </div>
           <table class="table table-bordered mt-sm-5">
             <thead>
               <tr>
@@ -152,7 +172,6 @@
                 <th>นามสกุล</th>
                 <th>ประเภทการกู้</th>
                 <th>ยืนยันการทำสัญญา</th>
-                
               </tr>
             </thead>
             <tbody>
@@ -160,19 +179,16 @@
                 <td>001</td>
                 <td></td>
                 <td></td>
-                <td>
-                </td>
+                <td></td>
                 <td>
                   <button
                     type="button"
                     class="btn btn-info"
-                    data-toggle="modal"
-                    data-target="#myModal"
+                    onclick="confirmPaper()"
                   >
                     ยืนยัน
                   </button>
                 </td>
-               
               </tr>
             </tbody>
           </table>
@@ -188,44 +204,121 @@
             </ul>
           </div>
         </div>
-      </div>
-      <!---------modal----------->
-      <div class="modal fade" id="myModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <h4 class="modal-title">สัญญาเงินกู้</h4>
-              <button type="button" class="close" data-dismiss="modal">
-                &times;
-              </button>
-            </div>
+        <!------Modal------>
+        <!-- <div
+          class="modal fade bd-example-modal-lg"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="myLargeModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h class="modal-title mx-auto">
+                  แบบคำขอสวัสดิการเงินกู้เพื่อตัดชุดครุยบุคลากร
+                </h>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <div class="col-6"></div>
+                  <div class="col-1">
+                    <h class="">วันที่</h>
+                  </div>
+                  <div class="col-1">
+                    <input
+                      type="text"
+                      style="border: none"
+                      size="1"
+                      id="date"
+                    />
+                  </div>
+                  <div class="col-1">
+                    <h class="">เดือน</h>
+                  </div>
+                  <div class="col-1">
+                    <input
+                      type="text"
+                      style="border: none"
+                      size="1"
+                      id="month"
+                    />
+                  </div>
+                  <div class="col-1">
+                    <h class="">พ.ศ.</h>
+                  </div>
+                  <div class="col-1">
+                    <input
+                      type="text"
+                      style="border: none"
+                      size="1"
+                      id="year"
+                    />
+                  </div>
+                </div>
 
-            <!-- Modal body -->
-            <div class="modal-body">
-              <div>
-                <h>ชื่อ-สกุล :</h>
-              </div>
-              <div>
-                <h>ตำแหน่ง :</h>
-              </div>
-              <div>
-                <h>ประเภทเงินกู้ :</h>
-              </div>
-              <div>
-                <h>จำนวนเงินที่กู้ :</h>
-              </div>
-              
-            </div>
+                <div style="text-align: start; margin-top: 2%">
+                  <h
+                    >เรียน
+                    ประธานคณะอนุกรรมการสวัสดิการมหาวิทยาลัยสงขลานครินทร์</h
+                  >
+                </div>
+                <div class="row mx-auto" style="text-align: start">
+                  <div class="col-6 row">
+                    <div class="col-2">
+                      <h class="">1.ข้าพเจ้า</h>
+                    </div>
+                    <div class="col-4 ml-sm-2">
+                      <input type="text" style="border: none" id="nameUser" />
+                    </div>
+                  </div>
+                  <div class="col-6 row">
+                    <h class="">ตำแหน่ง</h>
 
-            <!-- Modal footer -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">
-                เซนต์สัญญา
-              </button>
+                    <div>
+                      <input
+                        class="ml-sm-2"
+                        type="text"
+                        style="border: none"
+                        id="userPosition"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row mx-auto" style="text-align: start">
+                  <div class="col-5 row">
+                    <div class="col-3">
+                      <h class="">รหัสเงินเดือน</h>
+                    </div>
+                    <div class="col-2 ml-sm-1">
+                      <input type="text" style="border: none" id="idSaraly" size="3" />
+                    </div>
+                  </div>
+                  <div class="col-6 row">
+                    <h class="">ตำแหน่ง</h>
+
+                    <div>
+                      <input
+                        class="ml-sm-2"
+                        type="text"
+                        style="border: none"
+                        id="userPosition"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -235,14 +328,14 @@
 
     <!-- date picked-->
     <script>
-        $('#datepicker').datepicker({
-            uiLibrary: 'bootstrap4'
-        });
+      $("#datepicker").datepicker({
+        uiLibrary: "bootstrap4",
+      });
     </script>
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 

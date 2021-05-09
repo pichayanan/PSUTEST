@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <title>Type-User</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Custom Fonts -->
+    <link
+      href="vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="vendor/simple-line-icons/css/simple-line-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js"
+      type="text/javascript"
+    ></script>
+    <link
+      href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav style="background-color: white; color: #000">
+      <ul class="nav justify-content-start">
+        <h5 style="margin-top: 1%; margin-left: 1%">
+          ระบบสวัสดิการเงินกู้มหาวิทยาลัยสงขลานครินทร์
+        </h5>
+      </ul>
+    </nav>
+    <nav class="navbar navbar-expand-sm">
+      <!-- Links -->
+      <ul class="navbar-nav">
+        <li class="nav-item mx-sm-3">
+          <a class="nav-link" href="./AdminHome.html">หน้าแรก</a>
+        </li>
+        <!-- Dropdown -->
+        <li class="nav-item dropdown mx-sm-3">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbardrop"
+            data-toggle="dropdown"
+          >
+            รายการกู้ทั้งหมด
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#"
+              >1.เงินกู้เพื่อรักษาพยาบาลตนเองและญาติสายตรง</a
+            >
+            <a class="dropdown-item" href="#">2.เงินกู้เพื่อการศึกษาของตนเอง</a>
+            <a class="dropdown-item" href="#"
+              >3.เงินกู้ค่าเล่าเรียนบุตรในส่วนที่เกินสิทธิ</a
+            >
+            <a class="dropdown-item" href="#"
+              >4.เงินกู้เพื่อซื้อวัสดุอุปกรณ์การศึกษาของบุตร</a
+            >
+            <a class="dropdown-item" href="#"
+              >5.เงินกู้เพื่อซื้อคอมพิวเตอร์ และอุปกรณ์ IT</a
+            >
+            <a class="dropdown-item" href="#"
+              >6.เงินกู้เพื่อส่งเสริมสุขภาวะบุคลากร/เครื่องมือออกกำลังกายเพื่อสุขภาพ</a
+            >
+            <a class="dropdown-item" href="#"
+              >7.เงินกู้เพื่อประกอบกิจกรรมด้านวัฒนธรรมบุคลากรและญาติสายตรง</a
+            >
+            <a class="dropdown-item" href="#"
+              >8.เงินกู้เพื่อซื้อประกันชีวิตของบุคลากร คู่สมรสและบุตร</a
+            >
+            <a class="dropdown-item" href="#"
+              >9.เงินกู้เพื่อซื้อหรือซ่อมแซมยานพาหนะ</a
+            >
+            <a class="dropdown-item" href="#"
+              >10.เงินกู้เพื่อซ่อมแซมที่อยู่อาศัย</a
+            >
+            <a class="dropdown-item" href="#"
+              >11.เงินยืมเพื่อตัดชุดขาวพร้อมเครื่องหมาย</a
+            >
+            <a class="dropdown-item" href="./DetailpageAdmin.html"
+              >12.เงินยืมเพื่อตัดชุดครุยบุคลากร</a
+            >
+          </div>
+        </li>
+        <li class="nav-item mx-sm-3">
+          <a class="nav-link" href="./evidenceAdmin.html">หลักฐานการกู้</a>
+        </li>
+        <li class="nav-item mx-sm-3">
+          <a class="nav-link" href="./paperAdmin.html">สัญญา</a>
+        </li>
+        <li class="nav-item dropdown mx-sm-3">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbardrop"
+            data-toggle="dropdown"
+          >
+            ไม่ชำระตามกำหนด
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="./problemAdmin.html"
+              >กรณี ผู้กู้ลาออก</a
+            >
+            <a class="dropdown-item" href="./problemAdmin.html"
+              >กรณี ผู้กู้เสียชีวิต</a
+            >
+            <a class="dropdown-item" href="./problemAdmin.html"
+              >กรณี ผู้กู้ติดต่อไม่ได้</a
+            >
+          </div>
+        </li>
+        <li class="nav-item mx-sm-3">
+          <a class="nav-link" href="./paymentAdmin.html">สรุปยอดชำระ</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="masthead">
+      <div class="container">
+        <div class="card my-auto" style="margin-left: 2%; margin-right: 2%">
+          <!-----ผู้กู้----->
+          <div>
+            <h5 style="margin-top: 2%; text-align: center">
+              แบบคำขอสวัสดิการเงินกู้เพื่อตัดชุดครุยบุคลากร
+            </h5>
+          </div>
+          <div class="row mt-sm-3" style="text-align: end">
+            <div class="col-6"></div>
+            <div class="col-1">
+              <h class="">วันที่</h>
+            </div>
+            <div class="col-1">
+              <input type="text" style="border: none" size="2" id="date" />
+            </div>
+            <div class="col-1">
+              <h class="">เดือน</h>
+            </div>
+            <div class="col-1">
+              <input type="text" style="border: none" size="2" id="month" />
+            </div>
+            <div class="col-1">
+              <h class="">พ.ศ.</h>
+            </div>
+            <div class="col-1">
+              <input type="text" style="border: none" size="2" id="year" />
+            </div>
+          </div>
+          <div class="mt-sm-3 ml-sm-2" style="text-align: start">
+            <h>เรียน ประธานคณะอนุกรรมการสวัสดิการมหาวิทยาลัยสงขลานครินทร์ </h>
+          </div>
+          <div class="row mt-sm-3 ml-sm-2">
+            <div class="col-4">
+              <h>1. ข้าพเจ้า</h>
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="NameU"
+              />
+            </div>
+            <div class="col-4">
+              <h>ตำแหน่ง</h>
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="PositionU"
+              />
+            </div>
+            <div class="col-4">
+              <h>รหัสเงินเดือน</h>
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="idSaraly"
+              />
+            </div>
+          </div>
+          <div class="row mt-sm-3 ml-sm-2">
+            <div class="col-1">
+              <h>เป็น</h>
+            </div>
+            <div class="form-check-inline mx-sm-3">
+              <label class="form-check-label">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  value=""
+                  id="type1"
+                />ข้าราชการ
+              </label>
+            </div>
+            <div class="form-check-inline mx-sm-3">
+              <label class="form-check-label">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  value=""
+                  id="type2"
+                />ลูกจ้างประจำ
+              </label>
+            </div>
+            <div class="form-check-inline mx-sm-3">
+              <label class="form-check-label">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  value=""
+                  id="type3"
+                />พนักงานมหาวิทยาลัย
+              </label>
+            </div>
+            <div class="form-check-inline mx-sm-3">
+              <label class="form-check-label">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  value=""
+                  id="type4"
+                />พนักงานเงินรายได้
+              </label>
+            </div>
+          </div>
+          <div class="row mt-sm-3 ml-sm-2">
+            <div class="col-4">
+              <h>สังกัดส่วนงาน </h>
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="idPo"
+              />
+            </div>
+            <div class="col-4">
+              <h>โทรศัพท์</h>
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="telephone"
+              />
+            </div>
+            <div class="col-4">
+              <h>มือถือ</h>
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="phone"
+              />
+            </div>
+          </div>
+          <div class="row mt-sm-3 ml-sm-2">
+            <div class="col-6">
+              <h>2. ได้รับเงินเดือน/ค่าจ้างเดือนละ</h>
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="saraly"
+              />
+              <h>บาท</h>
+            </div>
+            <div class="col-6">
+              <h>สุทธิเดือนละ</h>
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="totalSaraly"
+              />
+              <h>บาท (ผู้กู้ต้องมีเงินเดือนคง</h>
+            </div>
+          </div>
+          <div class="mt-sm-3 ml-sm-4">
+            <h
+              >เหลือสุทธิหลังจากหักหนี้สินทุกประเภทแล้วไม่น้อยกว่าร้อยละ 30)
+            </h>
+          </div>
+          <div class="row mt-sm-3 ml-sm-4">
+            <h>3. จำนวนเงินที่ประสงค์จะขอกู้ จำนวน</h>
+            <input
+              type="text"
+              style="border: none; margin-left: 2%"
+              id="loanMoney"
+            />
+            <h>บาท (</h>
+            <input
+              type="text"
+              style="border: none; margin-left: 2%"
+              id="loanThai"
+            />
+            <h> )</h>
+          </div>
+          <div class="row mt-sm-3 ml-sm-3">
+            <h style="margin-left: 10%"
+              >ข้าพเจ้าขอรับรองว่าข้อความข้างต้นเป็นความจริงทุกประการ
+              ในกรณีมหาวิทยาลัยฯตรวจสอบแล้วปรากฏว่าผู้กู้ให้ข้อความเป็นเท็จ
+            </h>
+            <h>
+              มหาวิทยาลัยฯจะตัดสิทธิ์การเงินกู้ทุกประเภทและจะคิดดอกเบี้ยเงินกู้ที่ค้างชำระในอัตรา
+              ร้อยละ 7.5 ต่อปี และจะดำเนินการทางวินัยอีกทางหนึ่งด้วย
+            </h>
+          </div>
+          <div class="row mt-sm-3" style="text-align: end">
+            <div class="col-6"></div>
+            <div class="col-2">
+              <h>(ลงชื่อ) </h>
+            </div>
+            <div class="col-2">
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="nameUser"
+              />
+            </div>
+            <div class="col-1">
+              <h>ผู้กู้ </h>
+            </div>
+          </div>
+          <div class="row mt-sm-3" style="text-align: end">
+            <div class="col-7"></div>
+            <div class="col-4" style="text-align: center">
+              <h>(</h>
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="nameUser"
+              />
+              <h>)</h>
+            </div>
+
+            <div class="col-1"></div>
+          </div>
+          <div class="row mt-sm-3 ml-sm-3">
+            <div class="col-2">
+              <h>หมายเหตุ</h>
+            </div>
+            <div class="col-10">
+              <h
+                >1. ผู้กู้แนบใบแสดงเงินเดือนของเดือนก่อนยื่นแบบคำขอกู้ จำนวน 1
+                ฉบับ</h
+              >
+            </div>
+          </div>
+          <div class="row mt-sm-3 ml-sm-3">
+            <div class="col-2"></div>
+            <div class="col-10">
+              <h
+                >2. ผู้กู้ยื่นใบเสร็จรับเงินหรือแสดงหลักฐานค่าใช้จ่ายให้
+                งานสวัสดิการและสิทธิประโยชน์ กองบริหารทรัพยากรบุคคล</h
+              >
+            </div>
+          </div>
+          <div class="row mt-sm-3 ml-sm-3 mb-sm-5">
+            <div class="col-2"></div>
+            <div class="col-10">
+              <h
+                >ภายใน 30 วัน นับจากวันรับเงินกู้
+                หากผู้กู้ไม่ยื่นเอกสารดังกล่าวมหาวิทยาลัยจะเรียกเงินกู้คืนทั้งจำนวน
+                พร้อมดอกเบี้ยร้อยละ 7.5 ต่อปี
+              </h>
+            </div>
+          </div>
+          <!-----ผู้กู้สมรสแล้ว----->
+          <div>
+            <h5 style="margin-top: 2%; text-align: center">
+              (ใช้เฉพาะกรณีที่ผู้กู้มีคู่สมรส)
+            </h5>
+          </div>
+          <div class="mt-sm-2 mr-sm-3" style="text-align: end">
+            <h> เขียนที่มหาวิทยาลัยสงขลานครินทร์ </h>
+          </div>
+          <div class="mt-sm-3 mr-sm-3" style="text-align: end">
+            <h> วันที่ </h>
+            <!-----วันเซนต์สัญญา----->
+            <input
+              type="text"
+              style="border: none; margin-left: 2%"
+              id="dateCen"
+            />
+          </div>
+          <div class="row mt-sm-4">
+            <div class="col-3"></div>
+            <div class="col-9">
+              <h>โดยหนังสือฉบับนี้ข้าพเจ้า </h>
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="NameMarried"
+              />
+              <h>ขอรับรองและยืนยันไว้ ณ ที่นี้ว่า ข้าพเจ้าตกลง </h>
+            </div>
+          </div>
+          <div class="row mt-sm-3">
+            <div class="col-1"></div>
+            <div class="col-11">
+              <h>ยินยอมด้วยในการที่</h>
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="nameUser"
+              />
+              <h
+                >ผู้ซึ่งเป็นสามี/ภรรยา โดยชอบด้วยกฎหมายของข้าพเจ้า
+                ได้ทำสัญญาเงินกู้เพื่อ
+              </h>
+            </div>
+          </div>
+          <div class="row mt-sm-3">
+            <div class="col-1"></div>
+            <div class="col-11">
+              <h
+                >ตัดชุดครุยบุคลากรกับ มหาวิทยาลัยสงขลานครินทร์
+                รวมทั้งขอให้ความยินยอมล่วงหน้าไว้สำหรับการทำนิติกรรมใด ๆ
+                อันสืบเนื่องจากหรือ</h
+              >
+            </div>
+          </div>
+          <div class="row mt-sm-3">
+            <div class="col-1"></div>
+            <div class="col-11">
+              <h
+                >เกี่ยวข้องกับนิติกรรมที่กล่าวถึงข้างต้นอันอาจเกิดขึ้นในอนาคต
+                เช่น การแก้ไข เปลี่ยนแปลง เพิ่มเติม ต่ออายุ ยกเลิก เพิกถอน
+                ประนีประนอม
+              </h>
+            </div>
+          </div>
+
+          <div class="row mt-sm-3">
+            <div class="col-1"></div>
+            <div class="col-11">
+              <h>แปลงหนี้ หักกลบลบหนี้ รับสภาพหนี้ ฯลฯ ทุกประการ</h>
+            </div>
+          </div>
+
+          <div class="row mt-sm-3" style="text-align: end">
+            <div class="col-5"></div>
+            <div class="col-2">
+              <h>(ลงชื่อ) </h>
+            </div>
+            <div class="col-2">
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="NameMarried"
+              />
+            </div>
+            <div class="col-2">
+              <h>ผู้ให้ความยินยอม </h>
+            </div>
+          </div>
+          <div class="row mt-sm-3" style="text-align: end">
+            <div class="col-6"></div>
+            <div class="col-4" style="text-align: center">
+              <h>(</h>
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="surenameM"
+              />
+              <h>)</h>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-1"></div>
+          </div>
+          <div class="mt-sm-5 ml-sm-3">
+            <h>ขอยืนยันว่าลายมือชื่อข้างต้น</h>
+          </div>
+          <div class="mt-sm-3 ml-sm-3">
+            <h>เป็นลายมือชื่อคู่สมรสของข้าพเจ้า</h>
+          </div>
+          <div class="row mt-sm-3 ml-sm-5">
+            <h>(ลงชื่อ) </h>
+
+            <input
+              type="text"
+              style="border: none; margin-left: 2%"
+              id="nameUser"
+            />
+
+            <h>ผู้กู้ </h>
+          </div>
+
+          <div class="row ml-sm-5 mt-sm-3 mb-sm-5">
+            <div class="ml-sm-1"></div>
+            <div class="col-11">
+              <h>(</h>
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="nameUser"
+              />
+              <h>)</h>
+            </div>
+          </div>
+
+          <!-------สัญญาค้ำ------->
+
+          <div>
+            <h5 style="margin-top: 2%; text-align: center">
+              สัญญาค้ำประกันเงินกู้เพื่อตัดชุดครุยบุคลากร
+            </h5>
+          </div>
+          <div class="mt-sm-2 mr-sm-3" style="text-align: end">
+            <h> เขียนที่มหาวิทยาลัยสงขลานครินทร์ </h>
+          </div>
+          <div class="mt-sm-3 mr-sm-3" style="text-align: end">
+            <h> วันที่ </h>
+            <!-----วันเซนต์สัญญา----->
+            <input
+              type="text"
+              style="border: none; margin-left: 2%"
+              id="dateCen"
+            />
+          </div>
+          <div class="row mt-sm-3">
+            <div class="col-2"></div>
+            <div class="col-6">
+              <h>ข้าพเจ้า นาย/นาง/นางสาว</h>
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="nameCen"
+              />
+            </div>
+            <div class="col-4">
+              <h>ตำแหน่ง</h>
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="positionCen"
+              />
+            </div>
+          </div>
+
+          <div class="row mt-sm-3">
+            <div class="col-7">
+              <div class="form-check-inline mx-sm-3">
+                <label class="form-check-label">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    value=""
+                    id="type1"
+                  />ข้าราชการ
+                </label>
+              </div>
+              <div class="form-check-inline mx-sm-3">
+                <label class="form-check-label">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    value=""
+                    id="type2"
+                  />ลูกจ้างประจำ
+                </label>
+              </div>
+              <div class="form-check-inline mx-sm-3">
+                <label class="form-check-label">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    value=""
+                    id="type3"
+                  />พนักงานมหาวิทยาลัย
+                </label>
+              </div>
+            </div>
+            <div class="col-5">
+              <h>สังกัดหน่วยงาน</h>
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="idpositionCen"
+              />
+            </div>
+          </div>
+
+          <div class="row mt-sm-3 ml-sm-3">
+            <div class="col-sm-7">
+              <h>ส่วนงาน</h>
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="positionjobCen"
+              />
+              <h>มหาวิทยาลัยสงขลานครินทร์</h>
+            </div>
+            <div class="col-sm-5">
+              <h>เงินเดือน</h>
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="saralyCen"
+                size="9"
+              />
+              <h>บาท</h>
+            </div>
+          </div>
+          <div class="row mt-sm-3 ml-sm-3">
+            <div class="col-sm-3">
+              <h>โทรศัพท์</h>
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="telephoneCen"
+                size="11"
+              />
+            </div>
+            <div class="col-sm-3">
+              <h>มือถือ</h>
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="phoneCen"
+                size="11"
+              />
+            </div>
+            <div class="col-sm-6">
+              <h>ขอทำสัญญาค้ำประกันฉบับนี้ให้ไว้ต่อมหาวิทยาลัย</h>
+            </div>
+          </div>
+          <div class="mt-sm-3 ml-sm-3">
+            <h
+              >สงขลานครินทร์ เพื่อเป็นหลักฐานการค้ำประกันการกู้ยืมเงิน
+              โดยมีข้อความอันเป็นสาระสำคัญดังนี้</h
+            >
+          </div>
+          <div class="row mt-sm-3 ml-sm-3">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+              <h>ข้อ 1 ตามที่ </h>
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="nameUser"
+              />
+              <h
+                >ได้กู้เงินเพื่อตัดชุดครุยบุคลากร ตามสัญญาเงินกู้เพื่อตัดชุดครุย
+              </h>
+            </div>
+          </div>
+
+          <div class="mt-sm-3 ml-sm-3">
+            <h>บุคลากร ลงวันที่</h>
+            <input
+              type="text"
+              style="border: none; margin-left: 2%"
+              id="dateCen"
+            />
+            <h
+              >นั้น ข้าพเจ้ายินยอมเป็นผู้ค้ำประกันเกี่ยวกับการกู้ยืมเงินดังกล่าว
+            </h>
+          </div>
+
+          <div class="row mt-sm-3 ml-sm-3">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+              <h>ข้อ 2  ข้าพเจ้าได้รับทราบข้อผูกพันของผู้กู้ในเรื่องการส่งเงินงวดชำระหนี้และค่าดอกเบี้ยตามที่กล่าวไว้ใน</h>
+            </div>
+          </div>
+          <div class="mt-sm-3 ml-sm-3">
+              <h>
+                สัญญากู้เงินเพื่อตัดชุดครุยบุคลากรโดยตลอดแล้ว และข้าพเจ้ายินยอมปฏิบัติตามข้อผูกพันในสัญญาเงินกู้ดังกล่าวทุกประการ
+              </h>
+          </div>
+
+          <div class="row mt-sm-3 ml-sm-3">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+              <h>ข้อ 3  หากผู้กู้ไม่ชำระเงิน   ไม่ว่าจะด้วยเหตุประการใดก็ตามและมหาวิทยาลัยได้แจ้งให้ข้าพเจ้าทราบแล้ว   </h>
+            </div>
+          </div>
+          <div class="mt-sm-3 ml-sm-3">
+              <h>
+                ข้าพเจ้ายินยอมจะชำระเงินต้นพร้อมดอกเบี้ยที่ยังค้างอยู่ทั้งสิ้นให้แก่มหาวิทยาลัยแทนผู้กู้ทันที
+              </h>
+          </div>
+
+          <div class="row mt-sm-3 ml-sm-3">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+              <h>ข้อ 4  ในกรณีที่ข้าพเจ้าต้องชำระเงินให้แก่มหาวิทยาลัยสงขลานครินทร์ ตามข้อ 3  ข้าพเจ้ายินยอม
+                </h>
+            </div>
+          </div>
+          <div class="mt-sm-3 ml-sm-3">
+              <h>
+                ให้มหาวิทยาลัยสงขลานครินทร์หักเงินเดือน  ค่าจ้างหรือค่าตอบแทนรายเดือนของข้าพเจ้าชำระหนี้เงินงวด ซึ่งข้าพเจ้าจะต้องชำระแทนผู้กู้เพื่อส่งให้แก่มหาวิทยาลัยต่อไป
+              </h>
+          </div>
+
+          <div class="row mt-sm-3 ml-sm-3">
+            <div class="col-sm-1"></div>
+            <div class="col-sm-10">
+              <h>ข้าพเจ้าได้อ่านและเข้าใจข้อความในหนังสือค้ำประกันฉบับนี้โดยตลอดแล้ว   เห็นว่าถูกต้องตามความ
+                </h>
+            </div>
+          </div>
+          <div class="mt-sm-3 ml-sm-3">
+              <h>
+                ประสงค์  จึงได้ลงลายมือชื่อไว้เป็นสำคัญต่อหน้าพยาน
+              </h>
+          </div>
+          <div class="row mt-sm-5" style="text-align: end">
+            <div class="col-5"></div>
+            <div class="col-2">
+              <h>(ลงชื่อ) </h>
+            </div>
+            <div class="col-2">
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="nameCen"
+              />
+            </div>
+            <div class="col-2">
+              <h>ผู้ค้ำประกัน </h>
+            </div>
+            <div class="col-sm-1"></div>
+          </div>
+          <div class="row mt-sm-3" style="text-align: end">
+            <div class="col-6"></div>
+            <div class="col-4" style="text-align: center">
+              <h>(</h>
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="nameCen"
+              />
+              <h>)</h>
+            </div>
+
+            <div class="col-2"></div>
+          </div>
+
+          <div class="row mt-sm-4" style="text-align: end">
+            <div class="col-5"></div>
+            <div class="col-2">
+              <h>(ลงชื่อ) </h>
+            </div>
+            <div class="col-2">
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="nameCen1"
+              />
+            </div>
+            <div class="col-2">
+              <h>พยาน </h>
+            </div>
+            <div class="col-sm-1"></div>
+          </div>
+          <div class="row mt-sm-3" style="text-align: end">
+            <div class="col-6"></div>
+            <div class="col-4" style="text-align: center">
+              <h>(</h>
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="nameCen1"
+              />
+              <h>)</h>
+            </div>
+
+            <div class="col-2"></div>
+          </div>
+          <div class="row mt-sm-4" style="text-align: end">
+            <div class="col-5"></div>
+            <div class="col-2">
+              <h>(ลงชื่อ) </h>
+            </div>
+            <div class="col-2">
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="nameCen2"
+              />
+            </div>
+            <div class="col-2">
+              <h>พยาน </h>
+            </div>
+            <div class="col-sm-1"></div>
+          </div>
+          <div class="row mt-sm-3 mb-sm-5" style="text-align: end">
+            <div class="col-6"></div>
+            <div class="col-4" style="text-align: center">
+              <h>(</h>
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="nameCen2"
+              />
+              <h>)</h>
+            </div>
+
+            <div class="col-2"></div>
+          </div>
+          <!-----ผู้ค้ำสมรสแล้ว------>
+         
+          <div>
+            <h5 style="margin-top: 2%; text-align: center">
+              (ใช้เฉพาะกรณีที่ผู้กู้มีคู่สมรส)
+            </h5>
+          </div>
+          <div class="mt-sm-2 mr-sm-3" style="text-align: end">
+            <h> เขียนที่มหาวิทยาลัยสงขลานครินทร์ </h>
+          </div>
+          <div class="mt-sm-3 mr-sm-3" style="text-align: end">
+            <h> วันที่ </h>
+            <!-----วันเซนต์สัญญา----->
+            <input
+              type="text"
+              style="border: none; margin-left: 2%"
+              id="dateCen"
+            />
+          </div>
+          <div class="row mt-sm-4">
+            <div class="col-3"></div>
+            <div class="col-9">
+              <h>โดยหนังสือฉบับนี้ข้าพเจ้า </h>
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="NameMarried"
+              />
+              <h>ขอรับรองและยืนยันไว้ ณ ที่นี้ว่า ข้าพเจ้าตกลง </h>
+            </div>
+          </div>
+          <div class="row mt-sm-3">
+            <div class="col-1"></div>
+            <div class="col-11">
+              <h>ยินยอมด้วยในการที่</h>
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="nameUser"
+              />
+              <h
+                >ผู้ซึ่งเป็นสามี/ภรรยา โดยชอบด้วยกฎหมายของข้าพเจ้า
+                ได้ทำสัญญาเงินกู้เพื่อ
+              </h>
+            </div>
+          </div>
+          <div class="row mt-sm-3">
+            <div class="col-1"></div>
+            <div class="col-11">
+              <h
+                >ตัดชุดครุยบุคลากรกับ มหาวิทยาลัยสงขลานครินทร์
+                รวมทั้งขอให้ความยินยอมล่วงหน้าไว้สำหรับการทำนิติกรรมใด ๆ
+                อันสืบเนื่องจากหรือ</h
+              >
+            </div>
+          </div>
+          <div class="row mt-sm-3">
+            <div class="col-1"></div>
+            <div class="col-11">
+              <h
+                >เกี่ยวข้องกับนิติกรรมที่กล่าวถึงข้างต้นอันอาจเกิดขึ้นในอนาคต
+                เช่น การแก้ไข เปลี่ยนแปลง เพิ่มเติม ต่ออายุ ยกเลิก เพิกถอน
+                ประนีประนอม
+              </h>
+            </div>
+          </div>
+
+          <div class="row mt-sm-3">
+            <div class="col-1"></div>
+            <div class="col-11">
+              <h>แปลงหนี้ หักกลบลบหนี้ รับสภาพหนี้ ฯลฯ ทุกประการ</h>
+            </div>
+          </div>
+
+          <div class="row mt-sm-3" style="text-align: end">
+            <div class="col-5"></div>
+            <div class="col-2">
+              <h>(ลงชื่อ) </h>
+            </div>
+            <div class="col-2">
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="NameMarried"
+              />
+            </div>
+            <div class="col-2">
+              <h>ผู้ให้ความยินยอม </h>
+            </div>
+          </div>
+          <div class="row mt-sm-3" style="text-align: end">
+            <div class="col-6"></div>
+            <div class="col-4" style="text-align: center">
+              <h>(</h>
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="surenameM"
+              />
+              <h>)</h>
+            </div>
+            <div class="col-1"></div>
+            <div class="col-1"></div>
+          </div>
+          <div class="mt-sm-5 ml-sm-3">
+            <h>ขอยืนยันว่าลายมือชื่อข้างต้น</h>
+          </div>
+          <div class="mt-sm-3 ml-sm-3">
+            <h>เป็นลายมือชื่อคู่สมรสของข้าพเจ้า</h>
+          </div>
+          <div class="row mt-sm-3 ml-sm-5">
+            <h>(ลงชื่อ) </h>
+
+            <input
+              type="text"
+              style="border: none; margin-left: 2%"
+              id="nameCen"
+            />
+
+            <h>ผู้ค้ำประกัน</h>
+          </div>
+
+          <div class="row ml-sm-5 mt-sm-3 mb-sm-5">
+            <div class="ml-sm-1"></div>
+            <div class="col-11">
+              <h>(</h>
+              <input
+                type="text"
+                style="border: none; margin-left: 2%"
+                id="nameCen"
+              />
+              <h>)</h>
+            </div>
+          </div>
+
+          <div class="row mt-sm-5 mb-sm-5 ">
+              <div class="col-sm-2"></div>
+              <div class="col-sm-4 mx-auto">
+                <button
+                type="button"
+                class="btn"
+                style="background-color: red;"
+                
+              >
+                cancel
+              </button>
+              </div>
+              <div class="col-sm-2"></div>
+              <div class="col-sm-4 mx-auto">
+                <button
+                type="button"
+                class="btn btn-info"
+                data-toggle="modal"
+               data-target="#myModal"
+              >
+                confirm
+              </button></div>
+          </div>
+
+ <!---------modal----------->
+ <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Confirm</h4>
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+            <h>ท่านยืนยันการเซนต์สัญญา และได้ทำการเซนต์เรียบร้อยแล้ว</h>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">
+            ปิด
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+        </div>
+      </div>
+    </div>
+
+    
+
+    <!-- date picked-->
+    <script>
+      $("#datepicker").datepicker({
+        uiLibrary: "bootstrap4",
+      });
+    </script>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/stylish-portfolio.min.js"></script>
+
+    <!-- foder -->
+    <script src="./javascript/User.js"></script>
+
+    <style>
+      /* Make the image fully responsive */
+      .carousel-inner img {
+        width: 100%;
+        height: 500px;
+      }
+    </style>
+  </body>
+</html>
