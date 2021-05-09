@@ -72,11 +72,11 @@ async function UserPage1() {
     }
 
     if (status == "สมรส") {
+      sessionStorage.setItem("user1", JSON.stringify(dataSet));
       location.href = "../User-2.html";
-      sessionStorage.setItem("user1", JSON.stringify(dataSet));
     } else {
-      location.href = "../User-3.html";
       sessionStorage.setItem("user1", JSON.stringify(dataSet));
+      location.href = "../User-3.html";
     }
   }
 }
@@ -552,7 +552,7 @@ async function UserConfirm() {
         lastpaid: 0,
         timepaid: "0",
         total: 0,
-        balance: 0,
+        balance: parseInt(parseUasr5.u5_Psalary),
       };
       // Send a POST request
       await axios.post(getPaymenttable, setpayment);
