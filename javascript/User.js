@@ -407,22 +407,14 @@ function UserPage5() {
     alert("กรุณาระบุข้อมูลให้ครบถ้วนและถูกต้อง");
   } else {
     sessionStorage.setItem("user5", JSON.stringify(dataSet));
+    let data = {
+      year_month_U: false,
+      year_month_S: false,
+    };
     if (parseInt(Psalary) <= 6000) {
       if (parseInt(total) >= moneyT) {
-        if (result_yearout_U > 0 && result_yearout_S > 0) {
-          if (result_year_U == 2) {
-            if (parseInt(yearNow.month) > parseInt(date_U[1])) {
-              location.href = "./UserConfirm.html";
-            } else {
-              console.log("อายุงานของคุณไม่ถึง 2 ปี");
-            }
-          } else if (result_year_S == 2) {
-            if (parseInt(yearNow.month) > parseInt(date_S[1])) {
-              location.href = "./UserConfirm.html";
-            } else {
-              console.log("อายุงานของคุณไม่ถึง 2 ปี");
-            }
-          } else if (result_year_U > 2 && result_year_S > 2) {
+        if (result_yearout_U >= 1 && result_yearout_S >= 1) {
+          if (result_year_U >= 2 && result_year_S >= 2) {
             sessionStorage.setItem("user5", JSON.stringify(dataSet));
             location.href = "./UserConfirm.html";
           } else {
