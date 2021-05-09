@@ -505,18 +505,7 @@ function Adminlogin() {
   }
 }
 
-function Userlogin() {
-  let Fname = document.getElementById("Fname").value;
-  let Lname = document.getElementById("Lname").value;
-  let idcard = document.getElementById("idcard").value;
-  let TypeP = $("#TypeP option:selected").val();
 
-  if (Fname == "" || Lname == "" || idcard == "" || TypeP == "0") {
-    alert("กรุณาระบุข้อมูลให้ถูกต้อง");
-  } else {
-    location.href = "./tableUser.html";
-  }
-}
 
 function confirmPaper() {
   location.href = "./confirmPaper.html";
