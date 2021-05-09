@@ -105,7 +105,7 @@ async function checkName() {
   let check_name = false;
 
   if (fname == "" || lname == "") {
-    console.log("กรุณาระบุข้อมูลให้ครบถ้วน");
+    alert("กรุณาระบุข้อมูลให้ครบถ้วนและถูกต้อง");
   } else {
     const response = await axios.get(`${API}/api/usertables`);
     let Usertables = response.data;
@@ -121,7 +121,7 @@ async function checkName() {
       }
     }
     if (check_name == false) {
-      console.log("ไม่มีข้อมูลที่ตรงกัน");
+      alert("ไม่พบข้อมูลของคุณในฐานข้อมูล");
     }
   }
 }
@@ -132,7 +132,7 @@ async function checkName3() {
   let check_name = false;
 
   if (fname == "" || lname == "") {
-    console.log("กรุณาระบุข้อมูลให้ครบถ้วน");
+    alert("กรุณาระบุข้อมูลให้ครบถ้วนและถูกต้อง");
   } else {
     const response = await axios.get(`${API}/api/usertables`);
     let Usertables = response.data;
@@ -147,7 +147,7 @@ async function checkName3() {
       }
     }
     if (check_name == false) {
-      console.log("ไม่มีข้อมูลที่ตรงกัน");
+      alert("ไม่พบข้อมูลของคุณในฐานข้อมูล");
     }
   }
 }
@@ -404,14 +404,14 @@ function UserPage5() {
           if (parseInt(yearNow.month) > parseInt(date_U[1])) {
             location.href = "./UserConfirm.html";
           } else {
-            console.log("อายุงานของผู้กู้ยังไม่ถึง");
+            alert("อายุงานของคุณไม่ถึง 2 ปี");
           }
         }
         if (result_year_S == 2) {
           if (parseInt(yearNow.month) > parseInt(date_S[1])) {
             location.href = "./UserConfirm.html";
           } else {
-            console.log("อายุงานของผู้ค้ำยังไม่ถึง");
+            alert("อายุงานของคุณไม่ถึง 2 ปี");
           }
         }
         if (result_year_U > 2 && result_year_S > 2) {
@@ -423,10 +423,10 @@ function UserPage5() {
           );
         }
       } else {
-        console.log("เงินสุธิไม่ผ่าน");
+        alert("เงินคงเหลือสุทธิของท่านน้อยกว่าเกณฑ์กำหนด 10%");
       }
     } else {
-      console.log("จำนวนเงินที่ข้อกู้เกินกำหนด");
+      alert("จำนวนเงินที่ขอกู้เกินเกณฑ์ที่กำหนดไว้");
     }
   }
 }
