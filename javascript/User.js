@@ -379,6 +379,10 @@ function UserPage5() {
   let result_year_U = parseInt(yearNow.yare) + 543 - parseInt(date_U[2]);
   let result_year_S = parseInt(yearNow.yare) + 543 - parseInt(date_S[2]);
 
+  let moneyT = parseInt(salary) * 0.1;
+  console.log(moneyT);
+  console.log(total);
+
   let dataSet = {
     u5_total: total,
     u5_Psalary: Psalary,
@@ -392,29 +396,37 @@ function UserPage5() {
 
   if (total == "" || Psalary == "" || salary == "") {
     alert("กรุณาระบุข้อมูลให้ครบถ้วนและถูกต้อง");
-  } else if (result_year_U == 2 || result_year_S == 2) {
-    sessionStorage.setItem("user5", JSON.stringify(dataSet));
-    if (result_year_U == 2) {
-      if (parseInt(yearNow.month) > parseInt(date_U[1])) {
-        location.href = "./UserConfirm.html";
-      } else {
-        console.log("อายุงานของผู้กู้ยังไม่ถึง");
-      }
-    }
-    if (result_year_S == 2) {
-      if (parseInt(yearNow.month) > parseInt(date_S[1])) {
-        location.href = "./UserConfirm.html";
-      } else {
-        console.log("อายุงานของผู้ค้ำยังไม่ถึง");
-      }
-    }
   } else {
-    console.log("else");
-    if (result_year_U > 2 && result_year_S > 2) {
-      sessionStorage.setItem("user5", JSON.stringify(dataSet));
-      location.href = "./UserConfirm.html";
+    sessionStorage.setItem("user5", JSON.stringify(dataSet));
+    if (parseInt(Psalary) <= 6000) {
+      if (parseInt(total) >= moneyT) {
+        if (result_year_U == 2) {
+          if (parseInt(yearNow.month) > parseInt(date_U[1])) {
+            location.href = "./UserConfirm.html";
+          } else {
+            console.log("อายุงานของผู้กู้ยังไม่ถึง");
+          }
+        }
+        if (result_year_S == 2) {
+          if (parseInt(yearNow.month) > parseInt(date_S[1])) {
+            location.href = "./UserConfirm.html";
+          } else {
+            console.log("อายุงานของผู้ค้ำยังไม่ถึง");
+          }
+        }
+        if (result_year_U > 2 && result_year_S > 2) {
+          sessionStorage.setItem("user5", JSON.stringify(dataSet));
+          location.href = "./UserConfirm.html";
+        } else {
+          alert(
+            "ระบบได้ทำการตรวจสอบแล้วคุณไม่อยู่ในเงื่อนไขที่สามารถกู้ยืมได้"
+          );
+        }
+      } else {
+        console.log("เงินสุธิไม่ผ่าน");
+      }
     } else {
-      alert("ระบบได้ทำการตรวจสอบแล้วคุณไม่อยู่ในเงื่อนไขที่สามารถกู้ยืมได้");
+      console.log("จำนวนเงินที่ข้อกู้เกินกำหนด");
     }
   }
 }
@@ -506,6 +518,6 @@ function Userlogin() {
   }
 }
 
-function confirmPaper(){
+function confirmPaper() {
   location.href = "./confirmPaper.html";
 }
