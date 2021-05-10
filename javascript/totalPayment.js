@@ -19,10 +19,9 @@ async function Userlogin() {
     if (TypeP == 0) {
       alert("กรุณาระบุประเภทที่ทำการกู้");
     } else if (TypeP == 12) {
-      // console.log("มีข้อมูล");
       const response = await axios.get(`${API}/api/usertables`);
       let Usertables = response.data;
-      // console.log(Usertables);
+      let checkvalidate = false;
       for (let index = 0; index < Usertables.length; index++) {
         const element = Usertables[index];
         const uFname = element.uFname;
@@ -30,10 +29,13 @@ async function Userlogin() {
         const uPhone = element.uPhone;
 
         if (uFname == fname && uLname == lname && uPhone == phone) {
-          console.log(element);
+          checkvalidate = true;
           sessionStorage.setItem("total_user", JSON.stringify(element));
           location.href = "./tableUser.html";
         }
+      }
+      if (checkvalidate == false) {
+        alert("ไม่พบข้อมูลของท่านในฐานข้อมูล");
       }
     } else {
       alert("ไม่พบข้อมูลของท่านในฐานข้อมูล");
@@ -45,7 +47,7 @@ async function setmoney_space() {
   let total_user = sessionStorage.getItem("total_user");
   let total = JSON.parse(total_user);
   let id = total.uId;
-  const response = await axios.get(`${API}/api/Paymenttables`);
+  const response = await axios.get(`${API}/api/paymenttables`);
 
   if (response.data.length > 0) {
     let data = [];

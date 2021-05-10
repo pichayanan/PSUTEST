@@ -19,10 +19,9 @@ async function Userlogin() {
     if (TypeP == 0) {
       alert("กรุณาระบุประเภทที่ทำการกู้");
     } else if (TypeP == 12) {
-      
       const response = await axios.get(`${API}/api/usertables`);
       let Usertables = response.data;
-      // console.log(Usertables);
+      let checkvalidate = false;
       for (let index = 0; index < Usertables.length; index++) {
         const element = Usertables[index];
         const uFname = element.uFname;
@@ -30,10 +29,13 @@ async function Userlogin() {
         const uPhone = element.uPhone;
 
         if (uFname == fname && uLname == lname && uPhone == phone) {
-          // console.log(element);
+          checkvalidate = true;
           sessionStorage.setItem("pament_user", JSON.stringify(element));
           location.href = "./paymentU.html";
         }
+      }
+      if (checkvalidate == false) {
+        alert("ไม่พบข้อมูลของท่านในฐานข้อมูล");
       }
     } else {
       alert("ไม่พบข้อมูลของท่านในฐานข้อมูล");
@@ -45,7 +47,7 @@ async function getdataPaymentU() {
   let pament_user = sessionStorage.getItem("pament_user");
   let pay_user = JSON.parse(pament_user);
   let id = pay_user.uId;
-  const response = await axios.get(`${API}/api/Paymenttables`);
+  const response = await axios.get(`${API}/api/paymenttables`);
   const subpay_user = sessionStorage.getItem("subpay_user");
 
   if (subpay_user != null) {
@@ -77,18 +79,12 @@ async function cash() {
   let subPay = JSON.parse(subpay_user);
 
   if (moneypay == "") {
-    console.log("ใส่จำนวนเงินสิ");
+    alert("กรุณาระบุจำนวนเงินที่ต้องการจะชำระ");
   } else {
-    let getPaymenttableById = `${API}/api/Paymenttables/${subPay.kPaymentt}`;
+    let getPaymenttableById = `${API}/api/paymenttables/${subPay.kPaymentt}`;
     const response = await axios.get(getPaymenttableById);
     let data = response.data;
     let parseMoney = parseInt(moneypay);
-
-    let check_balance = data.total - data.balance;
-    console.log(check_balance);
-    // if (check_balance < data.batchamount) {
-    //   console.log(data);
-    // }
 
     if (data.balance < data.batchamount) {
       data.lastpaid = parseMoney;
@@ -107,7 +103,7 @@ async function cash() {
       await axios.put(getPaymenttableById, data);
       location.href = "./paymentU.html";
     } else {
-      console.log("จ่ายไม่ได้");
+      alert("จำนวนเงินที่ท่านชำระน้อยกว่าจำนวนเงินที่กำหนด");
     }
   }
 }
