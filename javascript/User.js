@@ -400,7 +400,6 @@ function UserPage5() {
   const user5 = sessionStorage.getItem("user5");
   if (user5 != null) {
     sessionStorage.removeItem("user5");
-    location.href = "./UserConfirm.html";
   }
 
   if (total == "" || Psalary == "" || salary == "") {
@@ -423,7 +422,7 @@ function UserPage5() {
             );
           }
         } else {
-          console.log("อายุงานกำลังจะหมด");
+          alert("อายุงานของผู้กู้หรือผู้ค้ำที่เหลืออยู่น้อยกว่า 1 ปี");
         }
       } else {
         alert("เงินคงเหลือสุทธิของท่านน้อยกว่าเกณฑ์กำหนด 10%");
@@ -502,6 +501,7 @@ async function UserConfirm() {
       await axios.put(`${getUsertables}/${id_u3}`, parseUasr3);
     }
     if (user5 != null) {
+
       let parseUasr5 = JSON.parse(user5);
       let money_space = parseUasr5.u5_Psalary / 10;
 
@@ -534,7 +534,7 @@ async function UserConfirm() {
       };
       // Send a POST request
       await axios.post(getLoantable, dataset);
-
+      
       let setpayment = {
         kPaymentt: response_payment.data.length + 1,
         uId: id_u1,
