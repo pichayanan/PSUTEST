@@ -7,10 +7,10 @@ async function Userlogin() {
   let phone = document.getElementById("phone").value;
   let TypeP = $("#TypeP option:selected").val();
 
-  const pament_user = sessionStorage.getItem("pament_user");
+  const total_user = sessionStorage.getItem("total_user");
 
-  if (pament_user != null) {
-    sessionStorage.removeItem("pament_user");
+  if (total_user != null) {
+    sessionStorage.removeItem("total_user");
   }
 
   if (fname == "" || lname == "" || phone == "") {
@@ -31,7 +31,7 @@ async function Userlogin() {
 
         if (uFname == fname && uLname == lname && uPhone == phone) {
           console.log(element);
-          sessionStorage.setItem("pament_user", JSON.stringify(element));
+          sessionStorage.setItem("total_user", JSON.stringify(element));
           location.href = "./tableUser.html";
         }
       }
@@ -42,9 +42,9 @@ async function Userlogin() {
 }
 
 async function setmoney_space() {
-  let pament_user = sessionStorage.getItem("pament_user");
-  parse_pament = JSON.parse(pament_user);
-  let id = parse_pament.uId;
+  let total_user = sessionStorage.getItem("total_user");
+  let total = JSON.parse(total_user);
+  let id = total.uId;
   const response = await axios.get(`${API}/api/Paymenttables`);
 
   if (response.data.length > 0) {
