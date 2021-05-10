@@ -14,15 +14,14 @@ async function Userlogin() {
   }
 
   if (fname == "" || lname == "" || phone == "") {
-    console.log("no data");
+    alert("กรุณาระบุข้อมูลให้ถูกต้อง");
   } else {
     if (TypeP == 0) {
-      console.log("เลื่อก type ด้วย");
+      alert("กรุณาระบุประเภทที่ทำการกู้");
     } else if (TypeP == 12) {
-      console.log("มีข้อมูล");
       const response = await axios.get(`${API}/api/usertables`);
       let Usertables = response.data;
-      console.log(Usertables);
+      let checkvalidate = false;
       for (let index = 0; index < Usertables.length; index++) {
         const element = Usertables[index];
         const uFname = element.uFname;
@@ -30,13 +29,16 @@ async function Userlogin() {
         const uPhone = element.uPhone;
 
         if (uFname == fname && uLname == lname && uPhone == phone) {
-          console.log(element);
+          checkvalidate = true;
           sessionStorage.setItem("pament_user", JSON.stringify(element));
           location.href = "./paymentU.html";
         }
       }
+      if (checkvalidate == false) {
+        alert("ไม่พบข้อมูลของท่านในฐานข้อมูล");
+      }
     } else {
-      console.log("ไม่พบข้อมูล");
+      alert("ไม่พบข้อมูลของท่านในฐานข้อมูล");
     }
   }
 }
@@ -77,19 +79,12 @@ async function cash() {
   let subPay = JSON.parse(subpay_user);
 
   if (moneypay == "") {
-    console.log("ใส่จำนวนเงินสิ");
+    alert("กรุณาระบุจำนวนเงินที่ต้องการจะชำระ");
   } else {
     let getPaymenttableById = `${API}/api/paymenttables/${subPay.kPaymentt}`;
-    
     const response = await axios.get(getPaymenttableById);
     let data = response.data;
     let parseMoney = parseInt(moneypay);
-
-    let check_balance = data.total - data.balance;
-    console.log(check_balance);
-    // if (check_balance < data.batchamount) {
-    //   console.log(data);
-    // }
 
     if (data.balance < data.batchamount) {
       data.lastpaid = parseMoney;
@@ -108,7 +103,7 @@ async function cash() {
       await axios.put(getPaymenttableById, data);
       location.href = "./paymentU.html";
     } else {
-      console.log("จ่ายไม่ได้");
+      alert("จำนวนเงินที่ท่านชำระน้อยกว่าจำนวนเงินที่กำหนด");
     }
   }
 }

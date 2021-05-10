@@ -14,15 +14,14 @@ async function Userlogin() {
   }
 
   if (fname == "" || lname == "" || phone == "") {
-    console.log("no data");
+    alert("กรุณาระบุข้อมูลให้ถูกต้อง");
   } else {
     if (TypeP == 0) {
-      console.log("เลื่อก type ด้วย");
+      alert("กรุณาระบุประเภทที่ทำการกู้");
     } else if (TypeP == 12) {
-      console.log("มีข้อมูล");
       const response = await axios.get(`${API}/api/usertables`);
       let Usertables = response.data;
-      console.log(Usertables);
+      let checkvalidate = false;
       for (let index = 0; index < Usertables.length; index++) {
         const element = Usertables[index];
         const uFname = element.uFname;
@@ -30,13 +29,16 @@ async function Userlogin() {
         const uPhone = element.uPhone;
 
         if (uFname == fname && uLname == lname && uPhone == phone) {
-          console.log(element);
+          checkvalidate = true;
           sessionStorage.setItem("total_user", JSON.stringify(element));
           location.href = "./tableUser.html";
         }
       }
+      if (checkvalidate == false) {
+        alert("ไม่พบข้อมูลของท่านในฐานข้อมูล");
+      }
     } else {
-      console.log("ไม่พบข้อมูล");
+      alert("ไม่พบข้อมูลของท่านในฐานข้อมูล");
     }
   }
 }
