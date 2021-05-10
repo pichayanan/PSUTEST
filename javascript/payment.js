@@ -45,7 +45,7 @@ async function getdataPaymentU() {
   let pament_user = sessionStorage.getItem("pament_user");
   let pay_user = JSON.parse(pament_user);
   let id = pay_user.uId;
-  const response = await axios.get(`${API}/api/Paymenttables`);
+  const response = await axios.get(`${API}/api/paymenttables`);
   const subpay_user = sessionStorage.getItem("subpay_user");
 
   if (subpay_user != null) {
@@ -79,7 +79,8 @@ async function cash() {
   if (moneypay == "") {
     console.log("ใส่จำนวนเงินสิ");
   } else {
-    let getPaymenttableById = `${API}/api/Paymenttables/${subPay.kPaymentt}`;
+    let getPaymenttableById = `${API}/api/paymenttables/${subPay.kPaymentt}`;
+    
     const response = await axios.get(getPaymenttableById);
     let data = response.data;
     let parseMoney = parseInt(moneypay);

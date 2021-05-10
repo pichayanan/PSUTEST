@@ -45,7 +45,7 @@ async function setmoney_space() {
   let total_user = sessionStorage.getItem("total_user");
   let total = JSON.parse(total_user);
   let id = total.uId;
-  const response = await axios.get(`${API}/api/Paymenttables`);
+  const response = await axios.get(`${API}/api/paymenttables`);
 
   if (response.data.length > 0) {
     let data = [];
