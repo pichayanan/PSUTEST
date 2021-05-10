@@ -34,7 +34,7 @@
     <link href="css/stylish-portfolio.min.css" rel="stylesheet" />
   </head>
 
-  <body id="page-top" onload="setmoney_space()">
+  <body id="page-top" onload="getdataPaymentU()">
     <!-- Navigation -->
     <a class="menu-toggle rounded" href="#">
       <i class="fas fa-bars"></i>
@@ -74,8 +74,7 @@
             <input
               type="text"
               class="form-control"
-             
-              id="sumofbatch"
+              id="batchamount"
               value=""
               disabled
               style="margin-left: 2%"
@@ -85,12 +84,10 @@
           <div class="form-inline ml-sm-5" style="margin-top: 5%">
             <label for="phone">จำนวนเงินที่ต้องการชำระ :</label>
             <input
-              type="text"
+              type="number"
               class="form-control"
-             
               id="moneypay"
               value=""
-             
               style="margin-left: 2%"
             />
             <h style="margin-left: 2%">บาท</h>
@@ -101,7 +98,6 @@
             <input
               type="text"
               class="form-control"
-             
               id="total"
               value=""
              
