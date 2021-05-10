@@ -45,27 +45,37 @@ async function setmoney_space() {
   let pament_user = sessionStorage.getItem("pament_user");
   parse_pament = JSON.parse(pament_user);
   let id = parse_pament.uId;
-  const response = await axios.get(`${API}/api/Paymenttables/${id}`);
+  const response = await axios.get(`${API}/api/Paymenttables`);
 
-  let space = parseInt(response.data.batch);
-  let money_space = response.data.batchamount;
-  let total = response.data.total;
-  let balance = response.data.balance;
+  if (response.data.length > 0) {
+    let data = [];
+    let ele = "";
+    for (let index = 0; index < response.data.length; index++) {
+      const element = response.data[index];
+      if (element.uId == id) {
+        ele = element;
+      }
+    }
 
-  let data = [];
-  for (let index = 0; index < space; index++) {
-    let space_index = index + 1;
-    data.push(`<tr>
+    let space = parseInt(ele.batch);
+    let money_space = ele.batchamount;
+    let total = ele.total;
+    let balance = ele.balance;
+
+    for (let index = 0; index < space; index++) {
+      let space_index = index + 1;
+      data.push(`<tr>
                 <td>${space_index}</td>
                 <td>${money_space}</td>
                 </tr>`);
-  }
-  $("#data_space").append();
-  let table = `${data}`;
-  $("#data_space").append(table);
+    }
+    $("#data_space").append();
+    let table = `${data}`;
+    $("#data_space").append(table);
 
-  document.getElementById("total").value = total;
-  document.getElementById("balance").value = balance;
+    document.getElementById("total").value = total;
+    document.getElementById("balance").value = balance;
+  }
 }
 
 function back() {
