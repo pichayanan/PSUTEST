@@ -52,8 +52,8 @@
           <a class="js-scroll-trigger" href="/TotalUser.html">สรุปยอดชำระ</a>
         </li>
         <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="/paymentUser.html">ทำรายการชำระเงิน</a>
-        </li>
+            <a class="js-scroll-trigger" href="/paymentUser.html">ทำรายการชำระเงิน</a>
+          </li>
         <li class="sidebar-nav-item">
           <a class="js-scroll-trigger" href="/LoginAdmin.html">ADMIN PAGE</a>
         </li>
@@ -61,66 +61,64 @@
     </nav>
 
     <div class="masthead" style="text-align: center">
-      <div class="container" style="text-align: center; margin-left: 25%">
+      <div class="container" style=" margin-left: 25%">
         <div class="card" style="width: 700px">
           <h3
             class="mb-sm-2"
             style="text-align: center; margin-top: 5%; margin-bottom: 5%"
           >
-            สำหรับดูรายการที่ชำระ
+            สำหรับทำรายการที่ชำระเงิน
           </h3>
-          <div style="margin-top: 2%; margin-left: 2%; margin-right: 2%">
-            <table class="table table-bordered">
-              <thead class="thead-dark">
-                <tr>
-                  <th style="text-align: center">งวดที่</th>
-                  <th style="text-align: center">จำนวนเงินที่ต้องชำระต่องวด</th>
-                </tr>
-              </thead>
-              <tbody style="text-align: center" id="data_space"></tbody>
-            </table>
+          <div class="form-inline ml-sm-5" style="margin-top: 5%">
+            <label for="phone">จำนวนที่ต้องชำระต่องวด:</label>
+            <input
+              type="text"
+              class="form-control"
+             
+              id="sumofbatch"
+              value=""
+              disabled
+              style="margin-left: 2%"
+            />
+            <h style="margin-left: 2%">บาท</h>
           </div>
-          <div class="row mt-sm-3">
-            <div class="col-2"></div>
-            <div class="col-10">
-              <h
-                class="mb-sm-2"
-                style="text-align: center; margin-top: 5%; margin-bottom: 5%"
-              >
-                จำนวนเงินสุทธิ
-              </h>
-              <input
-                type="text"
-                style="border: none; margin-left: 2%"
-                id="total"
-                value=""
-                disabled
-              />
-              <h>บาท</h>
-            </div>
+          <div class="form-inline ml-sm-5" style="margin-top: 5%">
+            <label for="phone">จำนวนเงินที่ต้องการชำระ :</label>
+            <input
+              type="text"
+              class="form-control"
+             
+              id="moneypay"
+              value=""
+             
+              style="margin-left: 2%"
+            />
+            <h style="margin-left: 2%">บาท</h>
           </div>
-          <div class="row mt-sm-3">
-            <div class="col-2"></div>
-            <div class="col-10">
-              <h class="mb-sm-2" style="text-align: center"> คงเหลือ </h>
-              <input
-                type="text"
-                style="border: none; margin-left: 2%"
-                id="balance"
-                value=""
-                disabled
-              />
-              <h>บาท</h>
-            </div>
+          <div class="form-inline ml-sm-5" style="margin-top: 8%;margin-bottom: 5%;">
+
+            <label for="phone">คงเหลือ :</label>
+            <input
+              type="text"
+              class="form-control"
+             
+              id="total"
+              value=""
+             
+              style="margin-left: 2%"
+              disabled
+            />
+            <h style="margin-left: 2%">บาท</h>
+          </div>
           </div>
           <div style="margin-bottom: 10%; text-align: center; margin-top: 7%">
             <button
               type="submit"
               class="btn btn-primary"
               style="width: fit-content"
-              onclick="back()"
+              onclick="cash()"
             >
-              back
+              ชำระ
             </button>
           </div>
         </div>

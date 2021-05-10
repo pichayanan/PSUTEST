@@ -419,7 +419,7 @@ function UserPage5() {
             );
           }
         } else {
-          console.log("อายุงานกำลังจะหมด");
+          alert("อายุงานของผู้กู้หรือผู้ค้ำที่เหลืออยู่น้อยกว่า 1 ปี");
         }
       } else {
         alert("เงินคงเหลือสุทธิของท่านน้อยกว่าเกณฑ์กำหนด 10%");
@@ -498,6 +498,7 @@ async function UserConfirm() {
       await axios.put(`${getUsertables}/${id_u3}`, parseUasr3);
     }
     if (user5 != null) {
+
       let parseUasr5 = JSON.parse(user5);
       let money_space = parseUasr5.u5_Psalary / 10;
 
@@ -530,7 +531,7 @@ async function UserConfirm() {
       };
       // Send a POST request
       await axios.post(getLoantable, dataset);
-
+      
       let setpayment = {
         kPaymentt: response_payment.data.length + 1,
         uId: id_u1,
@@ -566,18 +567,7 @@ function Adminlogin() {
   }
 }
 
-function Userlogin() {
-  let Fname = document.getElementById("Fname").value;
-  let Lname = document.getElementById("Lname").value;
-  let idcard = document.getElementById("idcard").value;
-  let TypeP = $("#TypeP option:selected").val();
 
-  if (Fname == "" || Lname == "" || idcard == "" || TypeP == "0") {
-    alert("กรุณาระบุข้อมูลให้ถูกต้อง");
-  } else {
-    location.href = "./tableUser.html";
-  }
-}
 
 function confirmPaper() {
   location.href = "./confirmPaper.html";
