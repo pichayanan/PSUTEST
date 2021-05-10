@@ -400,17 +400,13 @@ function UserPage5() {
   const user5 = sessionStorage.getItem("user5");
   if (user5 != null) {
     sessionStorage.removeItem("user5");
-    location.href = "./UserConfirm.html";
   }
 
   if (total == "" || Psalary == "" || salary == "") {
     alert("กรุณาระบุข้อมูลให้ครบถ้วนและถูกต้อง");
   } else {
     sessionStorage.setItem("user5", JSON.stringify(dataSet));
-    let data = {
-      year_month_U: false,
-      year_month_S: false,
-    };
+
     if (parseInt(Psalary) <= 6000) {
       if (parseInt(total) >= moneyT) {
         if (result_yearout_U >= 1 && result_yearout_S >= 1) {
